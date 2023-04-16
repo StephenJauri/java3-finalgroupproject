@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="sharedtravelplan.mysql.database.azure.com" uuid="dd0f5c44-067d-4159-8307-e0b953b85b4a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://sharedtravelplan.mysql.database.azure.com:3306?serverTimezone=UTC&amp;useSSL=true&amp;requireSSL=false</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="AZURE_SQL_DB_SERVER" value="/subscriptions/9b61bcd2-7e1b-41f2-a65f-44a49dcea25a/resourceGroups/rg-app-java3-finalgroupproject-230416153523/providers/Microsoft.DBforMySQL/flexibleServers/sharedtravelplan" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
