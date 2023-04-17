@@ -10,13 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/java/com.armanjaurigue/dataaccess/database/DbConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/java/com.armanjaurigue/dataobjects/Ignore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/java/com.armanjaurigue/dataobjects/Parameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/java/com.armanjaurigue/dataobjects/Required.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/java/com.armanjaurigue/models/ModelAnnotated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/geeks/JavaIII/java3-finalgroupproject/src/main/webapp/java/com.armanjaurigue/dataobjects",
     "nodejs_package_manager_path": "npm"
   },
   "keyToStringList": {
@@ -51,6 +65,14 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\geeks\JavaIII\java3-finalgroupproject\src\main\webapp\java\com.armanjaurigue\dataobjects" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.armanjaurigue.models" />
+    </key>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Travel Plan">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -173,18 +195,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Azure Web App: java3-finalgroupproject:java3-finalgroupproject" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App">
       <option name="appServicePlanName" value="sp-app-java3-finalgroupprojectb91430453" />
       <option name="appServicePlanResourceGroupName" value="rg-app-java3-finalgroupproject-230416153523" />
@@ -285,7 +295,9 @@
       <option name="presentableId" value="Default" />
       <updated>1681677033014</updated>
       <workItem from="1681677035220" duration="1171000" />
-      <workItem from="1681678316176" duration="5032000" />
+      <workItem from="1681678316176" duration="10458000" />
+      <workItem from="1681703791562" duration="302000" />
+      <workItem from="1681753143858" duration="1034000" />
     </task>
     <servers />
   </component>
