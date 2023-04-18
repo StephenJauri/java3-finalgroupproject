@@ -1,5 +1,6 @@
 package com.arman_jaurigue.servlets;
 
+import com.armanJaurigue.dataObjects.User;
 import com.arman_jaurigue.models.Model;
 import com.arman_jaurigue.models.RegisterModel;
 
@@ -20,12 +21,12 @@ public class RegisterServlet extends HttpServlet {
         RegisterModel model = new RegisterModel();
         if (!Model.BuildModel(model, request))
         {
-            System.out.println("Invalid");
             request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request, response);
         }
         else
         {
-            System.out.println("Valid");
+            User newUser = new User();
+            Model.BuildModel(newUser, request);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }

@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterModel {
-    @Required(errorMessage = "This is required")
+    @Required
     @MaxLength(32)
     @MinLength(3)
     private String firstName;
@@ -25,7 +25,7 @@ public class RegisterModel {
     @Required
     @MinLength(5)
     @MaxLength(128)
-    @Validate(errorMessage = "Password must be strong")
+    @Validate(errorMessage = "Password must be strong", method = "")
     private char[] password;
     private String passwordError;
 
@@ -92,6 +92,7 @@ public class RegisterModel {
     public void setPasswordError(String passwordError) {
         this.passwordError = passwordError;
     }
+
 
     private static boolean passwordValidation(char[] password)
     {
