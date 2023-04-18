@@ -1,10 +1,9 @@
 package com.arman_jaurigue.models;
 
 
-import com.arman_jaurigue.data_objects.Ignore;
-import com.arman_jaurigue.data_objects.Parameter;
-import com.arman_jaurigue.data_objects.Required;
-import jdk.internal.net.http.common.Pair;
+import com.arman_jaurigue.data_objects.data_annotations.Ignore;
+import com.arman_jaurigue.data_objects.data_annotations.Parameter;
+import com.arman_jaurigue.data_objects.data_annotations.Required;
 import org.apache.commons.lang3.EnumUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,6 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public abstract class ModelAnnotated {
     @Ignore

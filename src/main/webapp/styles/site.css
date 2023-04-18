@@ -1,0 +1,26 @@
+:root {
+    --cosmos: #560D23;
+    --purple: #A36D90;
+}
+
+.bg-cosmos {
+    background-color: var(--cosmos);
+}
+
+.pc-purple {
+    color: var(--purple);
+}
+
+
+
+.input-group {
+
+}
+
+.error {
+    color: var(--cosmos);
+}
+
+.input-group .error:empty {
+    display: none;
+}
