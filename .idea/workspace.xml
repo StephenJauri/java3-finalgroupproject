@@ -10,25 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/ErrorFor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/MaxLength.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/MinLength.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/Validate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/enumerations/Privileges.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/enumerations/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/styles/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layout.tag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Ignore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/Ignore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/Parameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Required.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/Required.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/ModelAnnotated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/ModelAnnotated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +25,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -70,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "G:/School Projects/java3-finalgroupproject",
+    "last_opened_file_path": "D:/javafinal/java3-finalgroupproject",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm"
   },
@@ -102,10 +90,12 @@
       <option name="appServicePlanResourceGroup" />
       <option name="appSettingsKey" value="8eebea9b-b7a8-42e7-a065-6aba49eb1d0c" />
       <option name="artifact" />
+      <option name="autoPort" value="true" />
       <option name="debugOptions" />
       <option name="deployment" />
       <option name="deploymentStagingDirectoryPath" />
       <option name="funcPath" />
+      <option name="funcPort" value="0" />
       <option name="functionHostArguments" />
       <option name="hostJsonPath" />
       <option name="insightsName" />
@@ -321,6 +311,7 @@
       <workItem from="1681772471674" duration="1568000" />
       <workItem from="1681774137490" duration="1354000" />
       <workItem from="1681780208531" duration="24383000" />
+      <workItem from="1681830805216" duration="5684000" />
     </task>
     <servers />
   </component>
