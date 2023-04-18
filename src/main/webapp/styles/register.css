@@ -1,0 +1,12 @@
+.input-group {
+
+}
+
+.error {
+    color: darkred;
+}
+
+.input-group .error:empty {
+    display: none;
+
+}

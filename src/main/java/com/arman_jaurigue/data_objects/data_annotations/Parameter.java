@@ -1,4 +1,4 @@
-package com.arman_jaurigue.data_objects;
+package com.arman_jaurigue.data_objects.data_annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
