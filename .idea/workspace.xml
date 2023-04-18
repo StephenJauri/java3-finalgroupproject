@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/java/com/arman_jaurigue/models/ModelAnnotated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/java/com/arman_jaurigue/models/ModelAnnotated.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +294,7 @@
       <workItem from="1681753143858" duration="1034000" />
       <workItem from="1681772471674" duration="1568000" />
       <workItem from="1681774137490" duration="1354000" />
-      <workItem from="1681780208531" duration="1914000" />
+      <workItem from="1681780208531" duration="2757000" />
     </task>
     <servers />
   </component>
