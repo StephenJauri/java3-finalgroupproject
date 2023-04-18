@@ -69,7 +69,7 @@
       <recent name="com.armanjaurigue.models" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Travel Plan">
+  <component name="RunManager" selected="Azure Web App.Azure Web App: java3-finalgroupproject:java3-finalgroupproject">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -277,7 +277,6 @@
     </configuration>
     <list>
       <item itemvalue="Azure Web App.Azure Web App: java3-finalgroupproject:java3-finalgroupproject" />
-      <item itemvalue="Tomcat Server.Travel Plan" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
