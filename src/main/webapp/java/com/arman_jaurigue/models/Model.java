@@ -1,43 +1,23 @@
 package com.arman_jaurigue.models;
 
-
 import com.arman_jaurigue.data_objects.Ignore;
 import com.arman_jaurigue.data_objects.Parameter;
 import com.arman_jaurigue.data_objects.Required;
-import jdk.internal.net.http.common.Pair;
 import org.apache.commons.lang3.EnumUtils;
 
 import javax.servlet.http.HttpServletRequest;
-
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
-public abstract class ModelAnnotated {
-    @Ignore
-    protected Map<String, Consumer<String>> parameterMaps = new HashMap<>();
-    @Ignore
-    private boolean modelStateValid = true;
-
-    public boolean isModelStateValid() {
-        return modelStateValid;
-    }
-
-    public ModelAnnotated(HttpServletRequest request)
+public final class Model {
+    public static boolean BuildModel(Object model, HttpServletRequest request)
     {
-        associateData();
-        for (Map.Entry<String, Consumer<String>> entry : parameterMaps.entrySet())
-        {
-            entry.getValue().accept(request.getParameter(entry.getKey()));
-        }
-        request.setAttribute("model", this);
-    }
+        boolean modelStateValid = true;
+        Map<String, Function<String,Boolean>> parameterMaps = new HashMap<>();
 
-    private void associateData()
-    {
-        Field[] fields = this.getClass().getDeclaredFields();
+        Field[] fields = model.getClass().getDeclaredFields();
         for (Field field : fields)
         {
             if (field.isAnnotationPresent(Ignore.class))
@@ -62,72 +42,79 @@ public abstract class ModelAnnotated {
                 if (cls.isAssignableFrom(String.class)) {
                     parameterMaps.put(parameterName, value ->
                     {
+                        boolean valid = true;
                         if (value != null)
                         {
                             try {
                                 field.setAccessible(true);
-                                field.set(this,value);
+                                field.set(model,value);
                                 field.setAccessible(false);
                             } catch (IllegalAccessException e) {
-                                modelStateValid = false;
+                                valid = false;
                             }
                         }
                         else if (required)
                         {
-                            modelStateValid = false;
+                            valid = false;
                         }
+                        return valid;
                     });
                 }
                 if (cls.isAssignableFrom(Integer.class)) {
 
                     parameterMaps.put(parameterName, value ->
                     {
+                        boolean valid = true;
                         if (value != null)
                         {
                             try{
                                 int num = Integer.parseInt(value);
                                 field.setAccessible(true);
-                                field.set(this, num);
+                                field.set(model, num);
                                 field.setAccessible(false);
                             } catch (IllegalAccessException e) {
-                                modelStateValid = false;
+                                valid = false;
                             } catch (NumberFormatException ex) {
-                                modelStateValid = false;
+                                valid = false;
                             }
                         }
                         else if (required)
                         {
-                            modelStateValid = false;
+                            valid = false;
                         }
+                        return valid;
                     });
                 }
                 if (cls.isAssignableFrom(Double.class)) {
                     parameterMaps.put(parameterName, value ->
                     {
+                        boolean valid = true;
                         if (value != null)
                         {
                             try{
                                 double num = Double.parseDouble(value);
                                 field.setAccessible(true);
-                                field.set(this, num);
+                                field.set(model, num);
                                 field.setAccessible(false);
                             }
                             catch (NumberFormatException ex)
                             {
-                                modelStateValid = false;
+                                valid = false;
                             } catch (IllegalAccessException e) {
-                                modelStateValid = false;
+                                valid = false;
                             }
                         }
                         else if (required)
                         {
-                            modelStateValid = false;
+                            valid = false;
                         }
+                        return valid;
                     });
                 }
                 if (cls.isEnum()) {
                     parameterMaps.put(parameterName, value ->
                     {
+                        boolean valid = true;
                         Class<Enum> enumClass = (Class<Enum>)cls;
                         if (value != null)
                         {
@@ -135,29 +122,34 @@ public abstract class ModelAnnotated {
                             {
                                 try {
                                     field.setAccessible(true);
-                                    field.set(this, Enum.valueOf(enumClass,value));
-                                    System.out.println("Inside Model value: " + field.get(this));
+                                    field.set(model, Enum.valueOf(enumClass,value));
                                     field.setAccessible(false);
                                 } catch (IllegalAccessException e) {
                                     System.out.println("Error");
-                                    modelStateValid = false;
+                                    valid = false;
                                 }
                             }
                             else
                             {
-                                modelStateValid = false;
+                                valid = false;
                             }
                         }
                         else if (required)
                         {
-                            modelStateValid = false;
+                            valid = false;
                         }
+                        return valid;
                     });
                 }
             } catch (IllegalArgumentException ex) {
-                modelStateValid = false;
+                return false;
             }
         }
+        for (Map.Entry<String, Function<String, Boolean>> entry : parameterMaps.entrySet())
+        {
+            modelStateValid = modelStateValid && entry.getValue().apply(request.getParameter(entry.getKey()));
+        }
+        request.setAttribute("model", model);
+        return modelStateValid;
     }
-
 }
