@@ -1,12 +1,11 @@
-package com.armanjaurigue.dataobjects;
+package com.arman_jaurigue.data_objects;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Parameter {
-    String value();
+@Target(ElementType.FIELD)
+public @interface Required {
 }

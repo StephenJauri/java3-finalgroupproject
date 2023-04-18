@@ -1,4 +1,4 @@
-package com.armanjaurigue.dataaccess.database;
+package com.arman_jaurigue.data_access.database;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
