@@ -1,3 +1,4 @@
+workspace.xml
 .env
 target/
 !.mvn/wrapper/maven-wrapper.jar
