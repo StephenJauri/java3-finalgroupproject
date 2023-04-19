@@ -11,6 +11,18 @@
         version="2.5">
   <display-name>Shared Travel Plan</display-name>
     <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>com.arman_jaurigue.servlets.IndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern></url-pattern>
+        <url-pattern>/index</url-pattern>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.arman_jaurigue.servlets.RegisterServlet</servlet-class>
     </servlet>
@@ -37,5 +49,15 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>PlansServlet</servlet-name>
+        <servlet-class>com.arman_jaurigue.servlets.PlansServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PlansServlet</servlet-name>
+        <url-pattern>/plans</url-pattern>
     </servlet-mapping>
 </web-app>

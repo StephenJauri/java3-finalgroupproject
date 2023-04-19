@@ -38,7 +38,7 @@
                 <p class="error">${model.confirmPasswordError}</p>
                 <p class="error">${model.otherError}</p>
             </div>
-            <button type="submit" id="registerSubmit">Sign Up</button>
+            <button class="btn"  type="submit" id="registerSubmit">Sign Up</button>
         </form>
     </jsp:body>
 </t:layout>

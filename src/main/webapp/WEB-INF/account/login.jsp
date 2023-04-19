@@ -18,7 +18,7 @@
                 <p class="error">${model.passwordError}</p>
                 <p class="error">${model.otherError}</p>
             </div>
-            <button type="submit">Sign Up</button>
+            <button class="btn" type="submit">Log In</button>
         </form>
     </jsp:body>
 </t:layout>

@@ -10,17 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/LoginModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/IndexServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/PlansServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/plans.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/MasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/MasterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/AccountServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layout.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layout.tag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +37,11 @@
       <list>
         <option value="Enum" />
         <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="Tag Library Descriptor" />
         <option value="JavaScript File" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -86,6 +90,7 @@
       <recent name="C:\Users\geeks\JavaIII\java3-finalgroupproject\src\main\webapp\java\com.armanjaurigue\dataobjects" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\School Projects\java3-finalgroupproject\src\main\webapp\WEB-INF" />
       <recent name="G:\School Projects\java3-finalgroupproject\src\main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

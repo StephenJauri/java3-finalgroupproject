@@ -15,8 +15,7 @@ public class LogoutServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-                request.getSession().removeAttribute("user");
-                request.getRequestDispatcher("index.jsp").forward(request,response);
+        request.getSession().removeAttribute("user");
+        response.sendRedirect("index");
     }
 }
