@@ -10,10 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/CheckAfter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/AccountServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/account/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd0f5c44-067d-4159-8307-e0b953b85b4a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd0f5c44-067d-4159-8307-e0b953b85b4a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/ModelAnnotated.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +34,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="AnnotationType" />
         <option value="Enum" />
         <option value="CSS File" />
         <option value="Jsp File" />
         <option value="Tag Library Descriptor" />
+        <option value="JavaScript File" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -56,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/javafinal/java3-finalgroupproject",
+    "last_opened_file_path": "G:/School Projects/java3-finalgroupproject/src/main/webapp/WEB-INF/account",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm"
   },
@@ -68,6 +79,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\School Projects\java3-finalgroupproject\src\main\webapp\WEB-INF\account" />
       <recent name="C:\Users\geeks\JavaIII\java3-finalgroupproject\src\main\webapp\java\com.armanjaurigue\dataobjects" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -78,6 +90,7 @@
       <recent name="com.armanjaurigue.data_access" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.arman_jaurigue.servlets" />
       <recent name="com.armanjaurigue.models" />
     </key>
   </component>
@@ -88,12 +101,10 @@
       <option name="appServicePlanResourceGroup" />
       <option name="appSettingsKey" value="8eebea9b-b7a8-42e7-a065-6aba49eb1d0c" />
       <option name="artifact" />
-      <option name="autoPort" value="true" />
       <option name="debugOptions" />
       <option name="deployment" />
       <option name="deploymentStagingDirectoryPath" />
       <option name="funcPath" />
-      <option name="funcPort" value="0" />
       <option name="functionHostArguments" />
       <option name="hostJsonPath" />
       <option name="insightsName" />

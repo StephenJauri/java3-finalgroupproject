@@ -1,6 +1,25 @@
 :root {
     --cosmos: #560D23;
     --purple: #A36D90;
+    --gray: #e0b3bb;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+}
+
+header {
+    flex: 0 1 auto;
+}
+
+main {
+    flex: 1 1 auto;
+    overflow-y: auto;
 }
 
 .bg-cosmos {
@@ -11,16 +30,45 @@
     color: var(--purple);
 }
 
+h1, h2, h3, h4, h5, h6, h7 {
+    color: var(--purple);
+}
 
+input {
+    border: 1px solid var(--purple);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
 
-.input-group {
+button[type=submit] {
+    background-color: var(--gray);
+    border: 2px solid var(--purple);
+}
 
+.basic-input-groups {
+    width: 90%;
+    max-width: 720px;
+    margin: auto;
+    height: min-content;
+}
+
+.basic-input-group {
+
+}
+
+.basic-input-group h4 {
+    margin-left: .1rem;
+}
+
+.basic-input-group * {
+    display: block;
+    width: 100%;
 }
 
 .error {
     color: var(--cosmos);
 }
 
-.input-group .error:empty {
+.basic-input-group .error:empty {
     display: none;
 }

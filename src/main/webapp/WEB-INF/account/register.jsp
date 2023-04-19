@@ -3,32 +3,41 @@
 
 <t:layout>
     <jsp:attribute name="title">Register</jsp:attribute>
+    <jsp:attribute name="scripts">
+        <script src="/scripts/account/register.js"></script>
+    </jsp:attribute>
     <jsp:body>
-        <form action="register" method="post">
-            <div class="input-group">
-                <h2>First Name</h2>
+        <form action="register" method="post" class="basic-input-groups">
+            <div class="basic-input-group">
+                <h4>First Name</h4>
                 <input type="text" value="${model.firstName}"  name="firstName"/>
                 <p class="error">${model.firstNameError}</p>
             </div>
 
-            <div class="input-group">
-                <h2>Last Name</h2>
+            <div class="basic-input-group">
+                <h4>Last Name</h4>
                 <input type="text" value="${model.lastName}" name="lastName"/>
                 <p class="error">${model.lastNameValidMessage}</p>
             </div>
 
-            <div class="input-group">
-                <h2>Email</h2>
+            <div class="basic-input-group">
+                <h4>Email</h4>
                 <input type="text" value="${model.email}" name="email"/>
                 <p class="error">${model.emailError}</p>
             </div>
 
-            <div class="input-group">
-                <h2>Password</h2>
+            <div class="basic-input-group">
+                <h4>Password</h4>
                 <input type="password" name="password"/>
                 <p class="error">${model.passwordError}</p>
             </div>
-            <button type="submit">Sign Up</button>
+
+            <div class="basic-input-group">
+                <h4>Confirm Password</h4>
+                <input type="password" name="confirmPassword"/>
+                <p class="error">${model.confirmPasswordError}</p>
+            </div>
+            <button type="submit" id="registerSubmit">Sign Up</button>
         </form>
     </jsp:body>
 </t:layout>

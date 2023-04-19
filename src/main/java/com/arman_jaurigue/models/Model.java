@@ -6,6 +6,9 @@ import org.apache.commons.lang3.EnumUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public final class Model {
 
@@ -31,7 +34,6 @@ public final class Model {
             Class<?> cls = field.getType();
             String value = request.getParameter(parameterName);
             String errorMessage = "";
-            System.out.println(field.getName());
             if (cls.isAssignableFrom(String.class)) {
                 boolean valid = true;
                 boolean isValueSet = false;
@@ -53,7 +55,6 @@ public final class Model {
                     setValidationMessage(field.getName(), model, errorMessage);
                 }
                 modelStateValid = valid && modelStateValid;
-                System.out.println(modelStateValid);
                 continue;
             }
             if (cls.isAssignableFrom(int.class)) {
@@ -158,20 +159,57 @@ public final class Model {
             }
         }
 
+        modelStateValid = runFinalValidations(model) && modelStateValid;
+
         request.setAttribute("model", model);
         return modelStateValid;
     }
 
+    private static boolean runFinalValidations(Object model) {
+        boolean modelValid = true;
+        List<Method> methods = Arrays.stream(model.getClass().getDeclaredMethods()).filter(method -> method.isAnnotationPresent(CheckAfter.class) && !Modifier.isStatic(method.getModifiers())).collect(Collectors.toList());
+        for (Method method : methods)
+        {
+            boolean valid = true;
+            try {
+                boolean accessible = method.canAccess(model);
+                method.setAccessible(true);
+                valid = (Boolean)method.invoke(model);
+                method.setAccessible(accessible);
+            } catch (IllegalAccessException e) {
+                valid = false;
+            } catch (InvocationTargetException e) {
+                valid = false;
+            }
+            if (!valid)
+            {
+                CheckAfter anno = method.getDeclaredAnnotation(CheckAfter.class);
+                String fieldName = anno.errorField();
+                if (!fieldName.equals(""))
+                {
+                    String errorMessage = anno.errorMessage();
+                    try {
+                        Field field = model.getClass().getDeclaredField(fieldName);
+                        boolean canAccess = field.canAccess(model);
+                        field.setAccessible(true);
+                        field.set(model, errorMessage);
+                        field.setAccessible(canAccess);
+                    } catch (NoSuchFieldException e) {
+                    } catch (IllegalAccessException e) {
+                    }
+                }
+            }
+            modelValid = modelValid && valid;
+        }
+        return modelValid;
+    }
     private static boolean validateStringField(Field field, Object model, String value)
     {
-        System.out.println("Validating " + field.getName());
         boolean valid = true;
         String validationMessage = null;
         if (field.isAnnotationPresent(MinLength.class))
         {
-            System.out.println("In Minlength");
             MinLength minLength = field.getDeclaredAnnotation(MinLength.class);
-            System.out.println("Min: " + minLength.value());
             if (value.length() < minLength.value())
             {
                 valid = false;

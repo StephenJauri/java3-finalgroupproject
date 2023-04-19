@@ -1,4 +1,4 @@
-package com.armanJaurigue.dataObjects;
+package com.arman_jaurigue.data_objects;
 
 import com.arman_jaurigue.data_objects.enumerations.Privileges;
 import com.arman_jaurigue.data_objects.enumerations.Status;

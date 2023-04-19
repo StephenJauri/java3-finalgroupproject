@@ -2,6 +2,7 @@ package com.arman_jaurigue.models;
 
 import com.arman_jaurigue.data_objects.data_annotations.*;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +29,10 @@ public class RegisterModel {
     @Validate(errorMessage = "Password must be strong", method = "")
     private char[] password;
     private String passwordError;
+
+    @Required
+    private char[] confirmPassword;
+    private String confirmPasswordError;
 
     public String getFirstName() {
         return firstName;
@@ -93,6 +98,21 @@ public class RegisterModel {
         this.passwordError = passwordError;
     }
 
+    public char[] getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(char[] confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getConfirmPasswordError() {
+        return confirmPasswordError;
+    }
+
+    public void setConfirmPasswordError(String confirmPasswordError) {
+        this.confirmPasswordError = confirmPasswordError;
+    }
 
     private static boolean passwordValidation(char[] password)
     {
@@ -106,7 +126,12 @@ public class RegisterModel {
                 ".{8,}" + // anything, at least eight characters
                 "$");
         Matcher m = p.matcher(passwordStr);
-        System.out.println("Regex: " + m.matches());
         return m.matches();
+    }
+
+    @CheckAfter(errorField = "confirmPasswordError", errorMessage = "Passwords must match")
+    private boolean passwordsMatch()
+    {
+        return Arrays.equals(confirmPassword, password);
     }
 }
