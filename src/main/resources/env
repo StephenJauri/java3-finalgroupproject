@@ -1,0 +1,9 @@
+DB_FULL_DRIVER=com.mysql.cj.jdbc.Driver
+DB_DRIVER=mysql
+DB_SERVER_NAME=sharedtravelplan
+DB_HOST=mysql.database.azure.com
+DB_PORT=3306
+DB_SCHEMA=travelplan
+DB_PROPERTIES=serverTimezone=UTC&useSSL=true&requireSSL=false
+DB_USER=nerdelicious
+DB_PASSWORD=Alm0stGr@du83d!
