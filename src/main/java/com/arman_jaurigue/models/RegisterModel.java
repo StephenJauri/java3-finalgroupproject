@@ -30,6 +30,17 @@ public class RegisterModel {
     private char[] password;
     private String passwordError;
 
+    @Ignore
+    private String otherError;
+
+    public String getOtherError() {
+        return otherError;
+    }
+
+    public void setOtherError(String otherError) {
+        this.otherError = otherError;
+    }
+
     @Required
     private char[] confirmPassword;
     private String confirmPasswordError;

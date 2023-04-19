@@ -36,6 +36,7 @@
                 <h4>Confirm Password</h4>
                 <input type="password" name="confirmPassword"/>
                 <p class="error">${model.confirmPasswordError}</p>
+                <p class="error">${model.otherError}</p>
             </div>
             <button type="submit" id="registerSubmit">Sign Up</button>
         </form>
