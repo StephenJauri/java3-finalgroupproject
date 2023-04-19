@@ -8,7 +8,6 @@ import com.arman_jaurigue.models.RegisterModel;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class RegisterServlet extends HttpServlet {
     @Override
@@ -19,24 +18,21 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RegisterModel model = new RegisterModel();
-        if (!Model.BuildModel(model, request))
+        if (!Model.buildAndSetModel(model, request))
         {
             request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request, response);
         }
         else
         {
             User newUser = new User();
-            Model.BuildModel(newUser, request);
+            Model.buildModel(newUser, request);
             try {
                 MasterManager.getMasterManager().getUserManager().registerUser(newUser, model.getPassword());
             } catch (RuntimeException e) {
-                throw e;
-                //request.setAttribute("model", model);
-                //request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request,response);
-                //return;
+                request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request,response);
+                return;
             }
             model.setOtherError("Success");
-            request.setAttribute("model", model);
             request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request,response);
         }
     }

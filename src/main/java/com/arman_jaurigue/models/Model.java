@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public final class Model {
 
-    public static boolean BuildModel(Object model, HttpServletRequest request)
+    public static boolean buildModel(Object model, HttpServletRequest request)
     {
 
         boolean modelStateValid = true;
@@ -160,9 +160,16 @@ public final class Model {
         }
 
         modelStateValid = runFinalValidations(model) && modelStateValid;
+        return modelStateValid;
+    }
+
+    public static boolean buildAndSetModel(Object model, HttpServletRequest request)
+    {
+        boolean valid = buildModel(model, request);
 
         request.setAttribute("model", model);
-        return modelStateValid;
+
+        return valid;
     }
 
     private static boolean runFinalValidations(Object model) {

@@ -19,14 +19,14 @@ public class AccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RegisterModel model = new RegisterModel();
-        if (!Model.BuildModel(model, request))
+        if (!Model.buildModel(model, request))
         {
             request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request, response);
         }
         else
         {
             User newUser = new User();
-            Model.BuildModel(newUser, request);
+            Model.buildModel(newUser, request);
             request.getRequestDispatcher("/").forward(request,response);
         }
     }
