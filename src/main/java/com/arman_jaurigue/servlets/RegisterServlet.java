@@ -1,6 +1,6 @@
 package com.arman_jaurigue.servlets;
 
-import com.armanJaurigue.dataObjects.User;
+import com.arman_jaurigue.data_objects.User;
 import com.arman_jaurigue.models.Model;
 import com.arman_jaurigue.models.RegisterModel;
 

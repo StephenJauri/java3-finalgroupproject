@@ -10,10 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +25,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="CSS File" />
         <option value="Jsp File" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,7 +48,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OWWtShLnJ7BSgtnpBo0QJ9faQF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -58,7 +62,11 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/javafinal/java3-finalgroupproject",
     "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -81,19 +89,17 @@
       <recent name="com.armanjaurigue.models" />
     </key>
   </component>
-  <component name="RunManager" selected="Azure Web App.Azure Web App: java3-finalgroupproject:java3-finalgroupproject">
+  <component name="RunManager" selected="Unknown.Travel Plan1174392080">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
       <option name="appServicePlanResourceGroup" />
       <option name="appSettingsKey" value="8eebea9b-b7a8-42e7-a065-6aba49eb1d0c" />
       <option name="artifact" />
-      <option name="autoPort" value="true" />
       <option name="debugOptions" />
       <option name="deployment" />
       <option name="deploymentStagingDirectoryPath" />
       <option name="funcPath" />
-      <option name="funcPort" value="0" />
       <option name="functionHostArguments" />
       <option name="hostJsonPath" />
       <option name="insightsName" />
@@ -325,5 +331,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

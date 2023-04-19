@@ -14,7 +14,7 @@
             <div class="input-group">
                 <h2>Last Name</h2>
                 <input type="text" value="${model.lastName}" name="lastName"/>
-                <p class="error">${model.lastNameValidMessage}</p>
+                <p class="error">${model.lastNameError}</p>
             </div>
 
             <div class="input-group">
