@@ -19,12 +19,12 @@ public class RegisterModel {
     @ErrorFor(field = "lastName")
     private String lastNameValidMessage;
     @Required
-    @MinLength(3)
-    @MaxLength(32)
+    @MinLength(5)
+    @MaxLength(100)
     private String email;
     private String emailError;
     @Required
-    @MinLength(5)
+    @MinLength(8)
     @MaxLength(128)
     @Validate(errorMessage = "Password must be strong", method = "")
     private char[] password;

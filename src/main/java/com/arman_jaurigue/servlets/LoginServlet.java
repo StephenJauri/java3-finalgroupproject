@@ -2,36 +2,38 @@ package com.arman_jaurigue.servlets;
 
 import com.arman_jaurigue.data_objects.User;
 import com.arman_jaurigue.logic_layer.MasterManager;
+import com.arman_jaurigue.models.LoginModel;
 import com.arman_jaurigue.models.Model;
 import com.arman_jaurigue.models.RegisterModel;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class RegisterServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/account/login.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RegisterModel model = new RegisterModel();
+        LoginModel model = new LoginModel();
         if (!Model.buildAndSetModel(model, request))
         {
-            request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/account/login.jsp").forward(request, response);
         }
         else
         {
-            User newUser = new User();
-            Model.buildModel(newUser, request);
+            User user = null;
             try {
-                newUser = MasterManager.getMasterManager().getUserManager().registerUser(newUser, model.getPassword());
-                request.getSession().setAttribute("user", newUser);
+                user = MasterManager.getMasterManager().getUserManager().loginUser(model.getEmail(), model.getPassword());
+                request.getSession().setAttribute("user", user);
             } catch (RuntimeException e) {
                 model.setOtherError(e.getMessage());
-                request.getRequestDispatcher("WEB-INF/account/register.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/account/login.jsp").forward(request,response);
                 return;
             }
             request.getRequestDispatcher("index.jsp").forward(request,response);

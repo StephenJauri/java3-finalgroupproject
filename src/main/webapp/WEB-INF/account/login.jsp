@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:layout>
-    <jsp:attribute name="title">Register</jsp:attribute>
+    <jsp:attribute name="title">Log In</jsp:attribute>
     <jsp:body>
         <form action="login" method="post" class="basic-input-groups">
 
@@ -16,6 +16,7 @@
                 <h4>Password</h4>
                 <input type="password" name="password"/>
                 <p class="error">${model.passwordError}</p>
+                <p class="error">${model.otherError}</p>
             </div>
             <button type="submit">Sign Up</button>
         </form>

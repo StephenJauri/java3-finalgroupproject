@@ -40,6 +40,11 @@ input {
     margin-top: 5px;
 }
 
+button.nav-link {
+    background: none;
+    border: none;
+}
+
 button[type=submit] {
     background-color: var(--gray);
     border: 2px solid var(--purple);

@@ -49,15 +49,15 @@ public class UserManager {
             if (userAccessor.selectEmailCountByEmail(user.getEmail()) == 0) {
                 if (userAccessor.addUser(user, sha256(password)) == 0)
                 {
-                    throw new RuntimeException("Failed to create the account");
+                    throw new RuntimeException("Failed to create the account.");
                 } else {
                     newUser = userAccessor.selectUserByEmail(user.getEmail());
                 }
             } else {
-                throw new RuntimeException("An account with that email already exists");
+                throw new RuntimeException("An account with that email already exists.");
             }
         } catch (RuntimeException | SQLException | NoSuchAlgorithmException ex) {
-            throw new RuntimeException("Failed to register the user" + ex.getMessage(), ex);
+            throw new RuntimeException("Failed to register the user." + "\n" + ex.getMessage(), ex);
         }
         return newUser;
     }

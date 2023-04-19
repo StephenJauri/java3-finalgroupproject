@@ -32,7 +32,9 @@
                     <ul class="navbar-nav ml-auto mb-0">
                         <li class="nav-item">
                             <% if (session.getAttribute("user") != null) { %>
-                            <a class="nav-link" href="logout">Log Off</a>
+                            <form action="logout" method="post" class="mb-0">
+                                <button class="nav-link" >Log Out</button>
+                            </form>
                             <% } else { %>
                             <a class="nav-link" href="login">Log In</a>
                             <% } %>
