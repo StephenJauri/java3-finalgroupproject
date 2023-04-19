@@ -9,11 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
+    <list default="true" id="a4d0ff97-35b9-4254-a69a-d8a6fd80352d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Plan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/PlanModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/AccountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/RegisterModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Enum" />
         <option value="CSS File" />
         <option value="Jsp File" />
@@ -47,30 +53,36 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OWWtShLnJ7BSgtnpBo0QJ9faQF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "G:/School Projects/java3-finalgroupproject/src/main/webapp/WEB-INF/account",
-    "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/School Projects/java3-finalgroupproject/src/main/webapp/WEB-INF/account&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+=======
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\School Projects\java3-finalgroupproject\src\main\webapp\WEB-INF\account" />
@@ -88,7 +100,7 @@
       <recent name="com.armanjaurigue.models" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Travel Plan">
+  <component name="RunManager" selected="Unknown.Travel Plan1698652205">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -296,13 +308,12 @@
     </configuration>
     <list>
       <item itemvalue="Azure Web App.Azure Web App: java3-finalgroupproject:java3-finalgroupproject" />
-      <item itemvalue="Tomcat Server.Travel Plan" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="" />
+      <changelist id="a4d0ff97-35b9-4254-a69a-d8a6fd80352d" name="Changes" comment="" />
       <created>1681677033014</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -331,5 +342,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

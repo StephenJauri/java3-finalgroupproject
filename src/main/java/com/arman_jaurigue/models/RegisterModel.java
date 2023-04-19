@@ -16,8 +16,7 @@ public class RegisterModel {
     @MaxLength(32)
     @Required
     private String lastName;
-    @ErrorFor(field = "lastName")
-    private String lastNameValidMessage;
+    private String lastNameError;
     @Required
     @MinLength(3)
     @MaxLength(32)
@@ -69,12 +68,12 @@ public class RegisterModel {
         this.lastName = lastName;
     }
 
-    public String getLastNameValidMessage() {
-        return lastNameValidMessage;
+    public String getLastNameError() {
+        return lastNameError;
     }
 
-    public void setLastNameValidMessage(String lastNameValidMessage) {
-        this.lastNameValidMessage = lastNameValidMessage;
+    public void setLastNameError(String lastNameValidMessage) {
+        this.lastNameError = lastNameValidMessage;
     }
 
     public String getEmail() {
