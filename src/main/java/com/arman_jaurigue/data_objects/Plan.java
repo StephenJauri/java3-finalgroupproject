@@ -1,6 +1,8 @@
 package com.arman_jaurigue.data_objects;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Plan {
     private int planId;
@@ -8,12 +10,14 @@ public class Plan {
     private String name;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+    private List<Stop> stops;
 
     public Plan() {
-        this(0, 0, "Undefined", LocalDateTime.now(), LocalDateTime.now());
+        this(0, 0, "Undefined", LocalDateTime.now(), LocalDateTime.now(), new ArrayList<>());
     }
 
-    public Plan(int planId, int userId, String name, LocalDateTime startDate, LocalDateTime endDate) {
+    public Plan(int planId, int userId, String name, LocalDateTime startDate, LocalDateTime endDate, List<Stop> stops) {
+        this.stops = stops;
         setPlanId(planId);
         setUserId(userId);
         setName(name);

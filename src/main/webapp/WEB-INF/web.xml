@@ -60,4 +60,22 @@
         <servlet-name>PlansServlet</servlet-name>
         <url-pattern>/plans</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreatePlanServlet</servlet-name>
+        <servlet-class>com.arman_jaurigue.servlets.CreatePlanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreatePlanServlet</servlet-name>
+        <url-pattern>/createplan</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/ServerError.html</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/FileNotFound.html</location>
+    </error-page>
 </web-app>

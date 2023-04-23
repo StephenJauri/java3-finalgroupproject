@@ -6,6 +6,10 @@ import org.apache.commons.lang3.EnumUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -157,6 +161,56 @@ public final class Model {
                 }
                 modelStateValid = valid && modelStateValid;
             }
+            if (cls.isAssignableFrom(LocalDateTime.class)) {
+                boolean valid = true;
+                boolean isValueSet = false;
+                if (value != null && !value.equals("")) {
+                    try {
+                        boolean accessible = field.canAccess(model);
+                        field.setAccessible(true);
+                        field.set(model, LocalDateTime.parse(value));
+                        field.setAccessible(accessible);
+                        isValueSet = true;
+                    } catch (IllegalAccessException e) {
+                        valid = false;
+                    } catch (DateTimeParseException e)
+                    {
+                        valid = false;
+                    }
+                }
+                if (required && !isValueSet) {
+                    valid = false;
+                    errorMessage = field.getDeclaredAnnotation(Required.class).errorMessage();
+                    setValidationMessage(field.getName(), model, errorMessage);
+                }
+                modelStateValid = valid && modelStateValid;
+                continue;
+            }
+            if (cls.isAssignableFrom(LocalDate.class)) {
+                boolean valid = true;
+                boolean isValueSet = false;
+                if (value != null && !value.equals("")) {
+                    try {
+                        boolean accessible = field.canAccess(model);
+                        field.setAccessible(true);
+                        field.set(model, LocalDate.parse(value));
+                        field.setAccessible(accessible);
+                        isValueSet = true;
+                    } catch (IllegalAccessException e) {
+                        valid = false;
+                    } catch (DateTimeParseException e)
+                    {
+                        valid = false;
+                    }
+                }
+                if (required && !isValueSet) {
+                    valid = false;
+                    errorMessage = field.getDeclaredAnnotation(Required.class).errorMessage();
+                    setValidationMessage(field.getName(), model, errorMessage);
+                }
+                modelStateValid = valid && modelStateValid;
+                continue;
+            }
         }
 
         modelStateValid = runFinalValidations(model) && modelStateValid;
@@ -214,6 +268,36 @@ public final class Model {
     {
         boolean valid = true;
         String validationMessage = null;
+        if (field.isAnnotationPresent(DateTime.class))
+        {
+            DateTime dateTime = field.getDeclaredAnnotation(DateTime.class);
+            try {
+                LocalDateTime.parse(value);
+            } catch (DateTimeParseException e) {
+                valid = false;
+                validationMessage = dateTime.errorMessage();
+            }
+        }
+        if (field.isAnnotationPresent(Date.class))
+        {
+            Date date = field.getDeclaredAnnotation(Date.class);
+            try {
+                LocalDate.parse(value);
+            } catch (DateTimeParseException e) {
+                valid = false;
+                validationMessage = date.errorMessage();
+            }
+        }
+        if (field.isAnnotationPresent(Time.class))
+        {
+            Time time = field.getDeclaredAnnotation(Time.class);
+            try {
+                LocalTime.parse(value);
+            } catch (DateTimeParseException e) {
+                valid = false;
+                validationMessage = time.errorMessage();
+            }
+        }
         if (field.isAnnotationPresent(MinLength.class))
         {
             MinLength minLength = field.getDeclaredAnnotation(MinLength.class);

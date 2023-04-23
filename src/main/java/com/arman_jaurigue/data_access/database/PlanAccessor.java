@@ -63,8 +63,8 @@ public class PlanAccessor {
                 CallableStatement callableStatement = connection.prepareCall("{CALL sp_insert_plan(?,?,?,?)}");
                 callableStatement.setInt(1, plan.getUserId());
                 callableStatement.setString(2, plan.getName());
-                callableStatement.setDate(3, Date.valueOf(plan.getStartDate().toString()));
-                callableStatement.setDate(4, Date.valueOf(plan.getEndDate().toString()));
+                callableStatement.setTimestamp(3, Timestamp.valueOf(plan.getStartDate()));
+                callableStatement.setTimestamp(4, Timestamp.valueOf(plan.getEndDate()));
                 ResultSet resultSet = callableStatement.executeQuery();
                 while(resultSet.next()) {
                     planId = resultSet.getInt("LAST_INSERT_ID()");

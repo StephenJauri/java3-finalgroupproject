@@ -95,7 +95,7 @@ public class UserAccessor {
             user = new User();
             user.setId(resultSet.getInt("id"));
             user.setFirstName(resultSet.getString("first_name"));
-            user.setFirstName(resultSet.getString("last_name"));
+            user.setLastName(resultSet.getString("last_name"));
             user.setEmail(resultSet.getString("email"));
             user.setStatus(Enum.valueOf(Status.class,resultSet.getString("status")));
             user.setPrivileges(Enum.valueOf(Privileges.class, resultSet.getString("privileges")));
