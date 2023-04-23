@@ -1,0 +1,32 @@
+.plan-control {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr 100px;
+    height: 100px;
+    font-size: 18px;
+    background-color: beige;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.plan-owner {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.plan-name {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.plan-start-date {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.plan-view {
+    grid-row: 2;
+    grid-column: 3;
+    margin-right: 25px;
+}

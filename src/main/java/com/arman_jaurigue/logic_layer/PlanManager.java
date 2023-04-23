@@ -23,4 +23,24 @@ public class PlanManager {
 
         return plans;
     }
+
+    public Plan getPlanByPlanId(int planId) {
+        Plan plan;
+        try {
+            plan = planAccessor.SelectPlanByPlanId(planId);
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to load the plan", ex);
+        }
+        return plan;
+    }
+
+    public int AddPlan(Plan plan) {
+        int planId = 0;
+        try {
+            planId = planAccessor.InsertPlan(plan);
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to add the plan", ex);
+        }
+        return planId;
+    }
 }

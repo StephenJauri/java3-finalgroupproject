@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd0f5c44-067d-4159-8307-e0b953b85b4a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd0f5c44-067d-4159-8307-e0b953b85b4a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/plan-partial.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/styles/plan.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/plans.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/plans.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +29,9 @@
         <option value="Class" />
         <option value="AnnotationType" />
         <option value="Enum" />
+        <option value="Tag Library Descriptor" />
         <option value="CSS File" />
         <option value="Jsp File" />
-        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -57,7 +61,10 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/javafinal/java3-finalgroupproject&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -310,6 +317,10 @@
       <workItem from="1681780208531" duration="24383000" />
       <workItem from="1681830805216" duration="11004000" />
       <workItem from="1681924993203" duration="380000" />
+      <workItem from="1681925722227" duration="32000" />
+      <workItem from="1681925923925" duration="590000" />
+      <workItem from="1681926535036" duration="5984000" />
+      <workItem from="1682279800158" duration="1615000" />
     </task>
     <servers />
   </component>
