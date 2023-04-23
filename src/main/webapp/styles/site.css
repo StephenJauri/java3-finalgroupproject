@@ -55,6 +55,11 @@ button[type=submit] {
     color: white;
 }
 
+.button {
+    background-color: var(--cosmos);
+    color: white;
+}
+
 .basic-input-groups {
     width: 90%;
     max-width: 720px;

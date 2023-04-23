@@ -75,7 +75,7 @@ public class UserAccessor {
 
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {
-                CallableStatement callableStatement = connection.prepareCall("{CALL sp_select_user_by_id(?)}");
+                CallableStatement callableStatement = connection.prepareCall("{CALL sp_get_user_by_id(?)}");
                 callableStatement.setInt(1, id);
                 user = getUser(callableStatement);
             }

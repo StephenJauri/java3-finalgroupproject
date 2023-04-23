@@ -4,6 +4,7 @@ public class MasterManager {
     private static MasterManager masterManager;
     private UserManager userManager;
     private PlanManager planManager;
+    private StopManager stopManager;
 
     public static MasterManager getMasterManager()
     {
@@ -18,6 +19,7 @@ public class MasterManager {
     {
         userManager = new UserManager();
         planManager = new PlanManager();
+        stopManager = new StopManager();
     }
 
     public UserManager getUserManager() {
@@ -26,4 +28,5 @@ public class MasterManager {
     public PlanManager getPlanManager() {
         return planManager;
     }
+    public StopManager getStopManager() { return stopManager; }
 }

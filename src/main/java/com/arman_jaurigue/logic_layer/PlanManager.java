@@ -15,13 +15,11 @@ public class PlanManager {
 
     public List<Plan> getAllPlansByUserId(int userId) {
         List<Plan> plans;
-
         try {
             plans = planAccessor.SelectAllPlansByUserId(userId);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to load plans", ex);
         }
-
         return plans;
     }
 
@@ -38,5 +36,15 @@ public class PlanManager {
         }
 
         return success;
+    }
+    
+    public Plan getPlanByPlanId(int planId) {
+        Plan plan;
+        try {
+            plan = planAccessor.SelectPlanByPlanId(planId);
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to load the plan", ex);
+        }
+        return plan;
     }
 }
