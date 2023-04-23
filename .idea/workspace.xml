@@ -10,25 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Stop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/DateTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/data_annotations/Time.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/CreatePlanModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/CreatePlanServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/FileNotFound.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ServerError.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +310,7 @@
       <workItem from="1681774137490" duration="1354000" />
       <workItem from="1681780208531" duration="24383000" />
       <workItem from="1681830805216" duration="11004000" />
-      <workItem from="1681924993203" duration="15350000" />
+      <workItem from="1681924993203" duration="16887000" />
     </task>
     <servers />
   </component>
