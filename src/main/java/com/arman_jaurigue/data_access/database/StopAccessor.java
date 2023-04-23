@@ -19,18 +19,10 @@ public class StopAccessor {
                 callableStatement.setInt(1, planId);
                 ResultSet resultSet = callableStatement.executeQuery();
                 while(resultSet.next()) {
-//                    Stop stop = new Stop(resultSet.getInt("StopId"), resultSet.getInt("PlanId"), resultSet.getInt("UserId"),
-//                            resultSet.getString("Name"), resultSet.getString("Location"), resultSet.getTime("Time"),
-//                                    resultSet.getString("Description"), resultSet.getBoolean("Status"));
-
-//                    Plan plan = new Plan();
-//                    plan.setPlanId(resultSet.getInt("PlanId"));
-//                    plan.setUserId(resultSet.getInt("UserId"));
-//                    plan.setName(resultSet.getString("Name"));
-//                    plan.setStartDate(resultSet.getDate("StartDate").toLocalDate().atTime(resultSet.getTime("StartDate").toLocalTime()));
-//                    plan.setStartDate(resultSet.getDate("EndDate").toLocalDate().atTime(resultSet.getTime("EndDate").toLocalTime()));
-//
-//                    plans.add(plan);
+                    Stop stop = new Stop(resultSet.getInt("StopId"), resultSet.getInt("PlanId"), resultSet.getInt("UserId"),
+                            resultSet.getString("Name"), resultSet.getString("Location"), resultSet.getTimestamp("Time"),
+                            resultSet.getString("Description"), resultSet.getBoolean("Status"));
+                    stops.add(stop);
                 }
                 resultSet.close();
                 callableStatement.close();

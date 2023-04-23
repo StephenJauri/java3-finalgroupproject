@@ -1,5 +1,6 @@
 package com.arman_jaurigue.data_objects;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Stop {
@@ -8,15 +9,15 @@ public class Stop {
     private int userId;
     private String name;
     private String location;
-    private LocalDateTime time;
+    private Timestamp time;
     private String description;
     private Boolean status;
 
     public Stop() {
-        this(0, 0, 0, "Undefined", "Undefined", LocalDateTime.now(), "Undefined", true);
+        this(0, 0, 0, "Undefined", "Undefined", Timestamp.valueOf(LocalDateTime.now()), "Undefined", true);
     }
 
-    public Stop(int stopId, int planId, int userId, String name, String location, LocalDateTime time, String description, Boolean status) {
+    public Stop(int stopId, int planId, int userId, String name, String location, Timestamp time, String description, Boolean status) {
         this.stopId = stopId;
         this.planId = planId;
         this.userId = userId;
@@ -67,11 +68,11 @@ public class Stop {
         this.location = location;
     }
 
-    public LocalDateTime getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(LocalDateTime time) {
+    public void setTime(Timestamp time) {
         this.time = time;
     }
 

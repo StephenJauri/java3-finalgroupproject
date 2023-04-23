@@ -21,7 +21,7 @@
       <%=DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getStartDate())%> to <%= DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getEndDate())%>
       </div>
       <div class="plan-view">
-        <button class="btn" type="submit" id="planView">View</button>
+        <a href="stops?planId=<%=plan.getPlanId()%>" class="btn" type="submit" id="planView">View</a>
       </div>
   </div>
 <% } %>

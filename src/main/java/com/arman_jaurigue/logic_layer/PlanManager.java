@@ -14,13 +14,11 @@ public class PlanManager {
 
     public List<Plan> getAllPlansByUserId(int userId) {
         List<Plan> plans;
-
         try {
             plans = planAccessor.SelectAllPlansByUserId(userId);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to load plans", ex);
         }
-
         return plans;
     }
 
