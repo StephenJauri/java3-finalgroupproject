@@ -8,6 +8,7 @@ import com.arman_jaurigue.data_objects.enumerations.Status;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserAccessor {
@@ -128,7 +129,7 @@ public class UserAccessor {
     }
 
     public List<User> selectUsersByPlanId(int planId) {
-        List<User> users = null;
+        List<User> users = new ArrayList<User>();
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {
                 CallableStatement callableStatement = connection.prepareCall("{CALL sp_select_all_users_by_planId(?)}");
@@ -142,7 +143,7 @@ public class UserAccessor {
                     user.setEmail(resultSet.getString("email"));
                     user.setStatus(Status.valueOf(resultSet.getString("status")));
                     user.setPrivileges(Privileges.valueOf(resultSet.getString("privileges")));
-                    user.setInviteStatus(resultSet.getBoolean("inviteStatus"));
+                    user.setInviteStatus(resultSet.getBoolean("InviteStatus"));
                     user.setRole(Roles.valueOf(resultSet.getString("Role")));
 
                     users.add(user);

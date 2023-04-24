@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "StopServlet", value = "/stop")
+@WebServlet(name = "StopServlet", value = "/stops")
 public class StopServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,14 +31,13 @@ public class StopServlet extends HttpServlet {
                     request.setAttribute("attendees", attendees);
                     request.getRequestDispatcher("WEB-INF/stop/stops.jsp").forward(request, response);
                 } catch (Exception ex) {
-                    // Error Page Here
-                    return;
+                    response.sendError(500);
+                    System.out.println("ERROR:" + ex.getMessage());
                 }
-            } else {
-                // Error Page Here
-                return;
             }
-
+            else {
+                response.sendError(404);
+            }
         } else {
             response.sendRedirect("login");
         }
