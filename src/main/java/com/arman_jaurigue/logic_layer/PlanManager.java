@@ -16,7 +16,7 @@ public class PlanManager {
     public List<Plan> getAllPlansByUserId(int userId) {
         List<Plan> plans;
         try {
-            plans = planAccessor.SelectAllPlansByUserId(userId);
+            plans = planAccessor.selectAllPlansByUserId(userId);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to load plans", ex);
         }
@@ -28,7 +28,7 @@ public class PlanManager {
         plan.setUserId(user.getId());
 
         try {
-            plan.setPlanId(planAccessor.InsertPlan(plan));
+            plan.setPlanId(planAccessor.insertPlan(plan));
             success = true;
         } catch (Exception e)
         {
@@ -41,7 +41,7 @@ public class PlanManager {
     public Plan getPlanByPlanId(int planId) {
         Plan plan;
         try {
-            plan = planAccessor.SelectPlanByPlanId(planId);
+            plan = planAccessor.selectPlanByPlanId(planId);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to load the plan", ex);
         }

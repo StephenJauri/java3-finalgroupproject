@@ -14,7 +14,7 @@ public class StopManager {
     public List<Stop> getAllStopsByPlanId(int planId) {
         List<Stop> stops;
         try {
-            stops = stopAccessor.SelectAllStopsByPlanId(planId);
+            stops = stopAccessor.selectAllStopsByPlanId(planId);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to load stops", ex);
         }

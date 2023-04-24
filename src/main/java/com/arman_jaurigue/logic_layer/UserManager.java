@@ -7,7 +7,12 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserManager {
     UserAccessor userAccessor;
@@ -41,6 +46,16 @@ public class UserManager {
             throw new RuntimeException("Failed to retrieve the user", ex);
         }
         return user;
+    }
+
+    public List<User> getUsersByPlanId(int planId) {
+        List<User> users;
+        try {
+            users = userAccessor.selectUsersByPlanId(planId);
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to load users", ex);
+        }
+        return users;
     }
 
     public User registerUser(User user, char[] password) throws RuntimeException {
