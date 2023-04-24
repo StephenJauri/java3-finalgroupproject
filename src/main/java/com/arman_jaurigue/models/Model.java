@@ -6,6 +6,8 @@ import org.apache.commons.lang3.EnumUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.*;
+import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -33,7 +35,6 @@ public final class Model {
             } else {
                 parameterName = field.getName();
             }
-
             boolean required = field.isAnnotationPresent(Required.class);
             Class<?> cls = field.getType();
             String value = request.getParameter(parameterName);
@@ -194,6 +195,56 @@ public final class Model {
                         boolean accessible = field.canAccess(model);
                         field.setAccessible(true);
                         field.set(model, LocalDate.parse(value));
+                        field.setAccessible(accessible);
+                        isValueSet = true;
+                    } catch (IllegalAccessException e) {
+                        valid = false;
+                    } catch (DateTimeParseException e)
+                    {
+                        valid = false;
+                    }
+                }
+                if (required && !isValueSet) {
+                    valid = false;
+                    errorMessage = field.getDeclaredAnnotation(Required.class).errorMessage();
+                    setValidationMessage(field.getName(), model, errorMessage);
+                }
+                modelStateValid = valid && modelStateValid;
+                continue;
+            }
+            if (cls.isAssignableFrom(LocalTime.class)) {
+                boolean valid = true;
+                boolean isValueSet = false;
+                if (value != null && !value.equals("")) {
+                    try {
+                        boolean accessible = field.canAccess(model);
+                        field.setAccessible(true);
+                        field.set(model, LocalTime.parse(value));
+                        field.setAccessible(accessible);
+                        isValueSet = true;
+                    } catch (IllegalAccessException e) {
+                        valid = false;
+                    } catch (DateTimeParseException e)
+                    {
+                        valid = false;
+                    }
+                }
+                if (required && !isValueSet) {
+                    valid = false;
+                    errorMessage = field.getDeclaredAnnotation(Required.class).errorMessage();
+                    setValidationMessage(field.getName(), model, errorMessage);
+                }
+                modelStateValid = valid && modelStateValid;
+                continue;
+            }
+            if (cls.isAssignableFrom(Timestamp.class)) {
+                boolean valid = true;
+                boolean isValueSet = false;
+                if (value != null && !value.equals("")) {
+                    try {
+                        boolean accessible = field.canAccess(model);
+                        field.setAccessible(true);
+                        field.set(model, Timestamp.valueOf(LocalDateTime.parse(value)));
                         field.setAccessible(accessible);
                         isValueSet = true;
                     } catch (IllegalAccessException e) {

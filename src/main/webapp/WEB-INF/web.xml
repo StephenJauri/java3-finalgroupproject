@@ -61,6 +61,17 @@
         <url-pattern>/plans</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>CreateStopServlet</servlet-name>
+        <servlet-class>com.arman_jaurigue.servlets.CreateStopServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateStopServlet</servlet-name>
+        <url-pattern>com.arman_jaurigue.servlets.CreateStopServlet</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>CreatePlanServlet</servlet-name>
         <servlet-class>com.arman_jaurigue.servlets.CreatePlanServlet</servlet-class>

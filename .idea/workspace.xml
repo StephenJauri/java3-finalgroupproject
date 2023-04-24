@@ -10,7 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/CreateStopModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/CreateStopServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/StopAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/StopAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +29,10 @@
         <option value="Enum" />
         <option value="CSS File" />
         <option value="Tag Library Descriptor" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="AnnotationType" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,7 +63,10 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/javafinal/java3-finalgroupproject",
     "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -310,7 +319,7 @@
       <workItem from="1681774137490" duration="1354000" />
       <workItem from="1681780208531" duration="24383000" />
       <workItem from="1681830805216" duration="11004000" />
-      <workItem from="1681924993203" duration="16887000" />
+      <workItem from="1681924993203" duration="21397000" />
     </task>
     <servers />
   </component>
