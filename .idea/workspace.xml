@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/CreateStopModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/CreateStopServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -17,6 +18,19 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/models/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/StopAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/StopAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/UserAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/StopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/StopServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stop-partial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stop-partial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stops.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stops.jsp" afterDir="false" />
+>>>>>>> origin/main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,13 +40,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
         <option value="Enum" />
         <option value="CSS File" />
+=======
+        <option value="Tag Library Descriptor" />
+>>>>>>> origin/main
         <option value="Tag Library Descriptor" />
         <option value="Jsp File" />
         <option value="AnnotationType" />
         <option value="HTML File" />
+<<<<<<< HEAD
         <option value="Class" />
+=======
+        <option value="Enum" />
+        <option value="CSS File" />
+>>>>>>> origin/main
       </list>
     </option>
   </component>
@@ -319,7 +342,12 @@
       <workItem from="1681774137490" duration="1354000" />
       <workItem from="1681780208531" duration="24383000" />
       <workItem from="1681830805216" duration="11004000" />
+<<<<<<< HEAD
       <workItem from="1681924993203" duration="21397000" />
+=======
+      <workItem from="1681924993203" duration="15350000" />
+      <workItem from="1682289254826" duration="4715000" />
+>>>>>>> origin/main
     </task>
     <servers />
   </component>
