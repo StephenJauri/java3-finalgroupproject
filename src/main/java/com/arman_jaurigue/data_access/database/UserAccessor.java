@@ -1,11 +1,14 @@
 package com.arman_jaurigue.data_access.database;
 
+import com.arman_jaurigue.data_objects.Plan;
 import com.arman_jaurigue.data_objects.User;
 import com.arman_jaurigue.data_objects.enumerations.Privileges;
+import com.arman_jaurigue.data_objects.enumerations.Roles;
 import com.arman_jaurigue.data_objects.enumerations.Status;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.*;
+import java.util.List;
 
 public class UserAccessor {
     public int addUser(User user, String password) throws SQLException {
@@ -122,5 +125,34 @@ public class UserAccessor {
         }
 
         return user;
+    }
+
+    public List<User> selectUsersByPlanId(int planId) {
+        List<User> users = null;
+        try(Connection connection = DbConnection.getConnection()) {
+            if(connection.isValid(2)) {
+                CallableStatement callableStatement = connection.prepareCall("{CALL sp_select_all_users_by_planId(?)}");
+                callableStatement.setInt(1, planId);
+                ResultSet resultSet = callableStatement.executeQuery();
+                while(resultSet.next()) {
+                    User user = new User();
+                    user.setId(resultSet.getInt("id"));
+                    user.setFirstName(resultSet.getString("first_name"));
+                    user.setLastName(resultSet.getString("last_name"));
+                    user.setEmail(resultSet.getString("email"));
+                    user.setStatus(Status.valueOf(resultSet.getString("status")));
+                    user.setPrivileges(Privileges.valueOf(resultSet.getString("privileges")));
+                    user.setInviteStatus(resultSet.getBoolean("inviteStatus"));
+                    user.setRole(Roles.valueOf(resultSet.getString("Role")));
+
+                    users.add(user);
+                }
+                resultSet.close();
+                callableStatement.close();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return users;
     }
 }

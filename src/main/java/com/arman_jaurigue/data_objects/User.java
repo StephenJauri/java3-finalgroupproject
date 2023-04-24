@@ -1,8 +1,8 @@
 package com.arman_jaurigue.data_objects;
 
-import com.arman_jaurigue.data_objects.enumerations.Privileges;
-import com.arman_jaurigue.data_objects.enumerations.Status;
+import com.arman_jaurigue.data_objects.enumerations.*;
 
+import javax.management.relation.Role;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,18 +13,22 @@ public class User {
     private String email;
     private Status status;
     private Privileges privileges;
+    private Boolean inviteStatus;
+    private Roles role;
 
     public User() {
-        this(0,"John","Doe","john@example.com","Passw0rd".toCharArray(), Status.Inactive, Privileges.None);
+        this(0,"John","Doe","john@example.com","Passw0rd".toCharArray(), Status.Inactive, Privileges.None, false, Roles.None);
     }
 
-    public User(int id, String firstName, String lastName, String email,char[] password, Status status, Privileges privileges) {
+    public User(int id, String firstName, String lastName, String email,char[] password, Status status, Privileges privileges, Boolean inviteStatus, Roles role) {
         setId(id);
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
         setStatus(status);
         setPrivileges(privileges);
+        setInviteStatus(inviteStatus);
+        setRole(role);
     }
 
     public int getId() {
@@ -87,4 +91,19 @@ public class User {
         this.privileges = privileges;
     }
 
+    public Boolean getInviteStatus() {
+        return inviteStatus;
+    }
+
+    public void setInviteStatus(Boolean inviteStatus) {
+        this.inviteStatus = inviteStatus;
+    }
+
+    public Roles getRole() {
+        return role;
+    }
+
+    public void setRole(Roles role) {
+        this.role = role;
+    }
 }

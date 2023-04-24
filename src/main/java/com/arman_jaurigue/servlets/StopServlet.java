@@ -24,9 +24,11 @@ public class StopServlet extends HttpServlet {
                     Plan plan = MasterManager.getMasterManager().getPlanManager().getPlanByPlanId(planId);
                     List<Stop> stops = MasterManager.getMasterManager().getStopManager().getAllStopsByPlanId(planId);
                     User owner = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId());
-                    request.setAttribute("owner", owner);
+                    List<User> attendees = MasterManager.getMasterManager().getUserManager().getUsersByPlanId(planId);
                     request.setAttribute("plan", plan);
                     request.setAttribute("model", stops);
+                    request.setAttribute("owner", owner);
+                    request.setAttribute("attendees", attendees);
                     request.getRequestDispatcher("WEB-INF/stop/stops.jsp").forward(request, response);
                 } catch (Exception ex) {
                     // Error Page Here

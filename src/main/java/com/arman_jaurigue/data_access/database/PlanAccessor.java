@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlanAccessor {
-    public List<Plan> SelectAllPlansByUserId(int userId) {
+    public List<Plan> selectAllPlansByUserId(int userId) {
         List<Plan> plans = new ArrayList<Plan>();
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {
@@ -33,7 +33,7 @@ public class PlanAccessor {
         return plans;
     }
 
-    public Plan SelectPlanByPlanId(int planId) {
+    public Plan selectPlanByPlanId(int planId) {
         Plan plan = new Plan();
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {
@@ -56,7 +56,7 @@ public class PlanAccessor {
         return plan;
     }
 
-    public int InsertPlan(Plan plan) {
+    public int insertPlan(Plan plan) {
         int planId = 0;
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {

@@ -68,7 +68,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateStopServlet</servlet-name>
-        <url-pattern>com.arman_jaurigue.servlets.CreateStopServlet</url-pattern>
+        <url-pattern>/createstop</url-pattern>
     </servlet-mapping>
 
 
@@ -88,5 +88,9 @@
     <error-page>
         <error-code>404</error-code>
         <location>/FileNotFound.html</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/Unauthorized.html</location>
     </error-page>
 </web-app>

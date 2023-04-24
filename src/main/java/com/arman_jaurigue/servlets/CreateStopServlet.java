@@ -15,21 +15,32 @@ import java.util.List;
 public class CreateStopServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        User fake = new User();
+        fake.setId(2);
+        request.getSession().setAttribute("user", fake);
         User user = (User)request.getSession().getAttribute("user");
         if (user != null) {
             CreateStopModel model = new CreateStopModel();
             Model.buildAndSetModel(model, request);
+            System.out.println("This far");
 
             if (model.getPlanIdError().length() > 0) {
+                System.out.println("Oops");
                 response.sendRedirect("plans");
                 return;
             }
             try {
                 Plan plan = MasterManager.getMasterManager().getPlanManager().getPlanByPlanId(model.getPlanId());
-                List<User> authorizedUsers = MasterManager.getMasterManager().getUserManager().
+                System.out.println("Loaded plan");
+                List<User> authorizedUsers = MasterManager.getMasterManager().getUserManager().getUsersByPlanId(plan.getPlanId());
+                System.out.println("Loaded lsit");
+                if (!(user.getId() == plan.getUserId() || authorizedUsers.stream().anyMatch(u -> u.getId() == user.getId() && u.getInviteStatus()))) {
+                    response.sendError(401);
+                    return;
+                }
             } catch (Exception ex){
                 response.sendError(401);
+                return;
             }
             request.getRequestDispatcher("WEB-INF/stop/create.jsp").forward(request, response);
         } else {
@@ -38,25 +49,6 @@ public class CreateStopServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = (User)request.getSession().getAttribute("user");
-        if (user != null)
-        {
-            CreatePlanModel model = new CreatePlanModel();
-            if (Model.buildAndSetModel(model, request)) {
-                Plan plan = new Plan();
-                Model.buildModel(plan, request);
-                try {
-                    MasterManager.getMasterManager().getPlanManager().addPlan(user, plan);
-                    response.sendRedirect("plans");
-                } catch (Exception e)
-                {
-                    response.sendError(500);
-                }
-            } else {
-                request.getRequestDispatcher("WEB-INF/plan/create.jsp").forward(request, response);
-            }
-        } else {
-            response.sendRedirect("login");
-        }
+
     }
 }

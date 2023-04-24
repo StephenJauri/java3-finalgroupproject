@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StopAccessor {
-    public List<Stop> SelectAllStopsByPlanId(int planId) {
+    public List<Stop> selectAllStopsByPlanId(int planId) {
         List<Stop> stops = new ArrayList<Stop>();
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {
