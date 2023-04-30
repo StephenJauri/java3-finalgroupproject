@@ -14,7 +14,7 @@ public class Stop {
     private Boolean status;
 
     public Stop() {
-        this(0, 0, 0, "Undefined", "Undefined", Timestamp.valueOf(LocalDateTime.now()), "Undefined", true);
+        this(0, 0, 0, "Undefined", "Undefined", Timestamp.valueOf(LocalDateTime.now()), "Undefined", null);
     }
 
     public Stop(int stopId, int planId, int userId, String name, String location, Timestamp time, String description, Boolean status) {

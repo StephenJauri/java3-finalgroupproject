@@ -31,8 +31,9 @@ public class StopServlet extends HttpServlet {
                     request.setAttribute("attendees", attendees);
                     request.getRequestDispatcher("WEB-INF/stop/stops.jsp").forward(request, response);
                 } catch (Exception ex) {
-                    response.sendError(500);
                     System.out.println("ERROR:" + ex.getMessage());
+//                    response.sendError(500);
+                    throw new ServletException(ex);
                 }
             }
             else {
