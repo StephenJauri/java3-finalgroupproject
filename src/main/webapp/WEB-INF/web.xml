@@ -61,6 +61,17 @@
         <url-pattern>/plans</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>CreateStopServlet</servlet-name>
+        <servlet-class>com.arman_jaurigue.servlets.CreateStopServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateStopServlet</servlet-name>
+        <url-pattern>/createstop</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>CreatePlanServlet</servlet-name>
         <servlet-class>com.arman_jaurigue.servlets.CreatePlanServlet</servlet-class>
@@ -77,5 +88,9 @@
     <error-page>
         <error-code>404</error-code>
         <location>/FileNotFound.html</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/Unauthorized.html</location>
     </error-page>
 </web-app>
