@@ -20,4 +20,14 @@ public class StopManager {
         }
         return stops;
     }
+
+    public boolean editStopStatusByStopId(int stopId, boolean status) {
+        boolean result = false;
+        try {
+            result = stopAccessor.updateStopStatusByStopId(stopId, status) == 1;
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to load stops", ex);
+        }
+        return result;
+    }
 }

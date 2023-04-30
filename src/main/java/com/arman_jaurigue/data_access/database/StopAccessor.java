@@ -34,9 +34,6 @@ public class StopAccessor {
                         stop.setStatus(bool);
                     }
 
-//                    Stop stop = new Stop(resultSet.getInt("StopId"), resultSet.getInt("PlanId"), resultSet.getInt("UserId"),
-//                            resultSet.getString("Name"), resultSet.getString("Location"), resultSet.getTimestamp("Time"),
-//                            resultSet.getString("Description"), resultSet.getBoolean("Status"));
                     stops.add(stop);
                 }
                 resultSet.close();
@@ -46,5 +43,24 @@ public class StopAccessor {
             throw new RuntimeException(e);
         }
         return stops;
+    }
+
+    public int updateStopStatusByStopId(int stopId, boolean status) {
+        int result = 0;
+
+        try(Connection connection = DbConnection.getConnection()) {
+            if(connection.isValid(2)) {
+                CallableStatement callableStatement = connection.prepareCall("{CALL sp_update_stop_status_by_stopId(?, ?)}");
+                callableStatement.setInt(1, stopId);
+                callableStatement.setBoolean(2, status);
+                ResultSet resultSet = callableStatement.executeQuery();
+                result = callableStatement.executeUpdate();
+                resultSet.close();
+                callableStatement.close();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
     }
 }
