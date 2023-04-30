@@ -1,19 +1,16 @@
-package com.arman_jaurigue.data_objects;
+package com.arman_jaurigue.data_objects.endpoint;
 
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 
 import java.io.StringWriter;
 
-public class Update {
-    private JsonObject json;
+public class StopApproval {
     private int stopId;
     private boolean approved;
 
-    public Update(JsonObject json) {
-        this.json = json;
-        stopId = json.getInt("stopId");
-        approved = json.getBoolean("approved");
+    public StopApproval(JsonObject json) {
+        setJson(json);
     }
 
     public int getStopId() {
@@ -33,11 +30,15 @@ public class Update {
     }
 
     public JsonObject getJson() {
-        return json;
+        return Json.createObjectBuilder()
+                .add("stopId", stopId)
+                .add("approved", approved)
+                .build();
     }
 
     public void setJson(JsonObject json) {
-        this.json = json;
+        stopId = json.getInt("stopId");
+        approved = json.getBoolean("approved");
     }
 
     @Override
@@ -46,7 +47,7 @@ public class Update {
         StringWriter writer = new StringWriter();
         Json
                 .createWriter(writer)
-                .write(json);
-       return writer.toString();
+                .write(getJson());
+        return writer.toString();
     }
 }

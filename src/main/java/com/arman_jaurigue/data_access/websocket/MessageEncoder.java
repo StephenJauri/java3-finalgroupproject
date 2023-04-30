@@ -1,16 +1,16 @@
 package com.arman_jaurigue.data_access.websocket;
 
 
-import com.arman_jaurigue.data_objects.Update;
+import com.arman_jaurigue.data_objects.endpoint.Message;
 
 import javax.websocket.EncodeException;
 import javax.websocket.Encoder;
 import javax.websocket.EndpointConfig;
 
-public class UpdateEncoder implements Encoder.Text<Update>{
+public class MessageEncoder implements Encoder.Text<Message>{
     @Override
-    public String encode(Update update) throws EncodeException {
-        return update.toString();
+    public String encode(Message message) throws EncodeException {
+        return message.toString();
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.arman_jaurigue.data_access.websocket;
 
-import com.arman_jaurigue.data_objects.Update;
+import com.arman_jaurigue.data_objects.endpoint.Message;
 import jakarta.json.Json;
 import jakarta.json.JsonException;
 import jakarta.json.JsonObject;
@@ -10,14 +10,14 @@ import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
 import java.io.StringReader;
 
-public class UpdateDecoder implements Decoder.Text<Update>{
+public class MessageDecoder implements Decoder.Text<Message>{
     @Override
-    public Update decode(String s) throws DecodeException {
+    public Message decode(String s) throws DecodeException {
         JsonObject jsonObject = Json
                 .createReader(new StringReader(s))
                 .readObject();
 
-        return new Update(jsonObject);
+        return new Message(jsonObject);
     }
 
     @Override

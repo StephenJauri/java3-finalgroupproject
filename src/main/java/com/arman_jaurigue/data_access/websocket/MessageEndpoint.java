@@ -1,6 +1,7 @@
 package com.arman_jaurigue.data_access.websocket;
 
-import com.arman_jaurigue.data_objects.Update;
+import com.arman_jaurigue.data_objects.endpoint.Message;
+import com.arman_jaurigue.data_objects.endpoint.StopApproval;
 import com.arman_jaurigue.logic_layer.MasterManager;
 
 import javax.websocket.*;
@@ -9,8 +10,8 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.*;
 
-@ServerEndpoint(value = "/stopslive/{planId}",encoders = {UpdateEncoder.class}, decoders = {UpdateDecoder.class})
-public class UpdateEndpoint {
+@ServerEndpoint(value = "/stopslive/{planId}",encoders = {MessageEncoder.class}, decoders = {MessageDecoder.class})
+public class MessageEndpoint {
     private static final SortedMap<String, Set<Session>> planViewers;
 
     static
@@ -43,23 +44,23 @@ public class UpdateEndpoint {
     }
 
     @OnMessage
-    public void onMessage(Session session, Update update, @PathParam("planId") String planId) throws EncodeException, IOException {
+    public void onMessage(Session session, Message message, @PathParam("planId") String planId) throws EncodeException, IOException {
         // Preform logic here and then send response to EVERYONE viewing the plan if it succeeds or just the original session if it fails
         try {
-            MasterManager.getMasterManager().getStopManager().updateStopApproval(update.getStopId(), update.isApproved());
+            if (message.getEventName().equals("changeStopApproval"))
+            {
+                StopApproval approval = new StopApproval(message.getEventData());
+                MasterManager.getMasterManager().getStopManager().updateStopApproval(approval.getStopId(), approval.isApproved());
+                for(Session subscriber: planViewers.get(planId))
+                {
+                    subscriber
+                            .getBasicRemote()
+                            .sendObject(message);
+                }
+            }
         } catch (Exception ex)
         {
-            session.getBasicRemote().sendObject();
-        }
-        for(Session subscriber: planViewers.get(planId))
-        {
-            if (!subscriber.equals(session))
-            {
-                //changed
-                subscriber
-                        .getBasicRemote()
-                        .sendObject(update);
-            }
+
         }
     }
 
