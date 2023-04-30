@@ -18,8 +18,19 @@ public class CreatePlanModel {
 
     @Required
     @DateTime
+    @Validate(errorMessage = "End date cannot be before the start date")
     private String endDate;
     private String endDateError;
+
+    private boolean endDateValidation(String endDate) {
+        boolean valid = true;
+        if (startDateError == null || startDateError.length() == 0 && endDateError == null || endDateError.length() == 0) {
+            if (LocalDateTime.parse(startDate).isAfter(LocalDateTime.parse(endDate))) {
+                valid = false;
+            }
+        }
+        return valid;
+    }
 
     public String getName() {
         return name;

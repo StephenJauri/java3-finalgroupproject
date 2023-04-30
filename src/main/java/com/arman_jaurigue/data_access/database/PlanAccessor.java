@@ -40,7 +40,7 @@ public class PlanAccessor {
                 CallableStatement callableStatement = connection.prepareCall("{CALL sp_select_plan_by_planId(?)}");
                 callableStatement.setInt(1, planId);
                 ResultSet resultSet = callableStatement.executeQuery();
-                while(resultSet.next()) {
+                if(resultSet.next()) {
                     plan.setPlanId(resultSet.getInt("PlanId"));
                     plan.setUserId(resultSet.getInt("UserId"));
                     plan.setName(resultSet.getString("Name"));

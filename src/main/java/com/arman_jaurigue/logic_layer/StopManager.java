@@ -37,4 +37,9 @@ public class StopManager {
 
         return success;
     }
+
+    public boolean updateStopApproval(int stopId, boolean approved)
+    {
+        return true;
+    }
 }

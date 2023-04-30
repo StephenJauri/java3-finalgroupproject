@@ -378,7 +378,7 @@ public final class Model {
                 Method method = model.getClass().getDeclaredMethod(methodName, String.class);
                 boolean accessible = method.canAccess(Modifier.isStatic(method.getModifiers()) ? null : model);
                 method.setAccessible(true);
-                valid = (Boolean)method.invoke(Modifier.isStatic(method.getModifiers()) ? null : method, value);
+                valid = (Boolean)method.invoke(Modifier.isStatic(method.getModifiers()) ? null : model, value);
                 method.setAccessible(accessible);
             } catch (NoSuchMethodException e) {
                 valid = false;

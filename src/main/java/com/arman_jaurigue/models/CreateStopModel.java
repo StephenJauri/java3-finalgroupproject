@@ -1,9 +1,6 @@
 package com.arman_jaurigue.models;
 
-import com.arman_jaurigue.data_objects.data_annotations.DateTime;
-import com.arman_jaurigue.data_objects.data_annotations.MaxLength;
-import com.arman_jaurigue.data_objects.data_annotations.MinLength;
-import com.arman_jaurigue.data_objects.data_annotations.Required;
+import com.arman_jaurigue.data_objects.data_annotations.*;
 import jdk.jfr.Timestamp;
 
 public class CreateStopModel {
@@ -29,6 +26,7 @@ public class CreateStopModel {
     @MaxLength(256)
     private String description;
     private String descriptionError;
+
 
     public int getPlanId() {
         return planId;
