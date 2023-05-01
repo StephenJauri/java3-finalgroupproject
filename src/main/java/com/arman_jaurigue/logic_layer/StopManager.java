@@ -21,7 +21,6 @@ public class StopManager {
         }
         return stops;
     }
-
     public boolean addStop(User user, Stop stop) {
         boolean success = false;
 
@@ -38,8 +37,13 @@ public class StopManager {
         return success;
     }
 
-    public boolean updateStopApproval(int stopId, boolean approved)
-    {
-        return true;
+    public boolean editStopStatusByStopId(int stopId, boolean status) {
+        boolean result = false;
+        try {
+            result = stopAccessor.updateStopStatusByStopId(stopId, status) == 1;
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to load stops", ex);
+        }
+        return result;
     }
 }

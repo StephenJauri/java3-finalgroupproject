@@ -25,6 +25,7 @@ public class StopServlet extends HttpServlet {
                     List<Stop> stops = MasterManager.getMasterManager().getStopManager().getAllStopsByPlanId(planId);
                     User owner = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId());
                     List<User> attendees = MasterManager.getMasterManager().getUserManager().getUsersByPlanId(planId);
+                    request.setAttribute("user", user);
                     request.setAttribute("plan", plan);
                     request.setAttribute("model", stops);
                     request.setAttribute("owner", owner);

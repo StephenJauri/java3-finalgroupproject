@@ -31,9 +31,6 @@ public class StopAccessor {
                         stop.setStatus(bool);
                     }
 
-//                    Stop stop = new Stop(resultSet.getInt("StopId"), resultSet.getInt("PlanId"), resultSet.getInt("UserId"),
-//                            resultSet.getString("Name"), resultSet.getString("Location"), resultSet.getTimestamp("Time"),
-//                            resultSet.getString("Description"), resultSet.getBoolean("Status"));
                     stops.add(stop);
                 }
                 resultSet.close();
@@ -46,8 +43,8 @@ public class StopAccessor {
     }
     public int InsertStop(Stop stop) {
         int stopId = 0;
-        try(Connection connection = DbConnection.getConnection()) {
-            if(connection.isValid(2)) {
+        try (Connection connection = DbConnection.getConnection()) {
+            if (connection.isValid(2)) {
                 CallableStatement callableStatement = connection.prepareCall("{CALL sp_insert_stop(?,?,?,?,?,?)}");
                 callableStatement.setInt("p_planId", stop.getPlanId());
                 callableStatement.setInt("p_userId", stop.getUserId());
@@ -56,7 +53,7 @@ public class StopAccessor {
                 callableStatement.setTimestamp("p_time", stop.getTime());
                 callableStatement.setString("p_desc", stop.getDescription());
                 ResultSet resultSet = callableStatement.executeQuery();
-                while(resultSet.next()) {
+                while (resultSet.next()) {
                     stopId = resultSet.getInt("LAST_INSERT_ID()");
                 }
 
@@ -67,4 +64,22 @@ public class StopAccessor {
         }
         return stopId;
     }
-}
+    public int updateStopStatusByStopId(int stopId, boolean status) {
+        int result = 0;
+
+        try(Connection connection = DbConnection.getConnection()) {
+            if(connection.isValid(2)) {
+                CallableStatement callableStatement = connection.prepareCall("{CALL sp_update_stop_status_by_stopId(?, ?)}");
+                callableStatement.setInt(1, stopId);
+                callableStatement.setBoolean(2, status);
+                ResultSet resultSet = callableStatement.executeQuery();
+                result = callableStatement.executeUpdate();
+                resultSet.close();
+                callableStatement.close();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+}giot

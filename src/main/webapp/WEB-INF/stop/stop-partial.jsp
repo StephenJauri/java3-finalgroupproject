@@ -10,6 +10,7 @@
     List<Stop> model = (List<Stop>) request.getAttribute("model");
     User owner = (User) request.getAttribute("owner");
     List<User> attendees = (List<User>) request.getAttribute("attendees");
+    User loggedInUser = (User) request.getAttribute("user");
     User proposer;
     List<Stop> acceptedStops = new ArrayList<Stop>();
     List<Stop> pendingStops = new ArrayList<Stop>();
@@ -32,7 +33,7 @@
             </h2>
         </div>
         <div class="col-xs-6">
-            <h2><%=DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getStartDate())%> to <%= DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getEndDate())%></   h2>
+            <h2><%=DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getStartDate())%> to <%= DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getEndDate())%></h2>
             <h2><%=plan.getStartDate()%> to <%=plan.getStartDate()%>
             </h2>
         </div>
@@ -43,18 +44,13 @@
     <div class="row">
         <h2><%= owner.getFirstName()%> <%= owner.getLastName()%> <b>Owner</b></h2>
     </div>
+    <h2>Participants:</h2>
         <% for (User user : attendees) { %>
             <div class="row">
-                <div class="col-xs-4">
+                <div class="col-xs-12">
                     <h5><%=user.getFirstName()%> <%=user.getLastName() %>
                         <b><%= user.getRole().equals("Assistant") ? "Assistant" : ""%>
                         </b></h5>
-                </div>
-                <div class="col-xs-4">
-                    <button class="button">Remove</button>
-                </div>
-                <div class="col-xs-4">
-                    <button class="button">Edit</button>
                 </div>
             </div>
     <% } %>
@@ -114,12 +110,14 @@
                 <div class="stop-desc">
                     Description: <%= stop.getDescription() %>
                 </div>
-                <div class="stop-accept">
-                    <button class="approve-stop" type="submit" value="<%=stop.getStopId()%>">Accept</button>
-                </div>
-                <div class="stop-deny">
-                    <button class="deny-stop" type="submit" value="<%=stop.getStopId()%>">Deny</button>
-                </div>
+                <% if (owner.getId() == loggedInUser.getId()) { %>
+                    <div class="stop-accept">
+                        <button class="approve-stop" type="submit" value="<%=stop.getStopId()%>">Accept</button>
+                    </div>
+                    <div class="stop-deny">
+                        <button class="deny-stop" type="submit" value="<%=stop.getStopId()%>">Deny</button>
+                    </div>
+                <% } %>
             </div>
         <% } %>
         <% } else { %>
