@@ -11,7 +11,9 @@
 
 
 <div class="row">
-    <a href="createplan" class="button">Add Plan</a>
+    <div class="col-xs-12 my-2 mx-2">
+        <a href="createplan" class=" btn button">Add Plan</a>
+    </div>
 </div>
 
 <% for(Plan plan: model) { %>

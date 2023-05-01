@@ -39,7 +39,9 @@
         </div>
     </div>
     <div class="row">
-        <a href="createstop?planId=<%=plan.getPlanId()%>" class="button">Add Stop</a>
+        <div class="col-md-12 mr-4 text-end">
+            <a href="createstop?planId=<%=plan.getPlanId()%>" class="btn button">Add Stop</a>
+        </div>
     </div>
     <div class="row">
         <h2><%= owner.getFirstName()%> <%= owner.getLastName()%> <b>Owner</b></h2>
