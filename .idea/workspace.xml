@@ -11,10 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/StopAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/StopAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/StopManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/StopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/StopServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stop-partial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stop-partial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,7 +319,8 @@
       <workItem from="1682301638388" duration="1037000" />
       <workItem from="1682302687300" duration="263000" />
       <workItem from="1682357272401" duration="8456000" />
-      <workItem from="1682892288986" duration="4501000" />
+      <workItem from="1682892288986" duration="4591000" />
+      <workItem from="1682914795218" duration="810000" />
     </task>
     <servers />
   </component>
