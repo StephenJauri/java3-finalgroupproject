@@ -8,9 +8,19 @@ import java.io.StringWriter;
 public class StopApproval {
     private int stopId;
     private boolean approved;
+    private int position;
 
     public StopApproval(JsonObject json) {
         setJson(json);
+        position = 0;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public int getStopId() {
@@ -30,9 +40,11 @@ public class StopApproval {
     }
 
     public JsonObject getJson() {
+        System.out.println("Building Json");
         return Json.createObjectBuilder()
                 .add("stopId", stopId)
                 .add("approved", approved)
+                .add("insertPosition", position)
                 .build();
     }
 

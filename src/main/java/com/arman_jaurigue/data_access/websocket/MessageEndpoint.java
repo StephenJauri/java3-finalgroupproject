@@ -1,5 +1,6 @@
 package com.arman_jaurigue.data_access.websocket;
 
+import com.arman_jaurigue.data_objects.Stop;
 import com.arman_jaurigue.data_objects.endpoint.Message;
 import com.arman_jaurigue.data_objects.endpoint.StopApproval;
 import com.arman_jaurigue.logic_layer.MasterManager;
@@ -25,9 +26,10 @@ public class MessageEndpoint {
         if (!planViewers.containsKey(planId))
         {
             final Set<Session> planSessions = Collections.synchronizedSet(new HashSet<>());
-            planSessions.add(session);
             planViewers.put(planId, planSessions);
+            System.out.println("Plan group created");
         }
+        planViewers.get(planId).add(session);
         System.out.println("Session Started");
     }
 
@@ -51,8 +53,26 @@ public class MessageEndpoint {
             {
                 StopApproval approval = new StopApproval(message.getEventData());
                 MasterManager.getMasterManager().getStopManager().updateStopApproval(approval.getStopId(), approval.isApproved());
+                System.out.println("got approval");
+                List<Stop> stops = MasterManager.getMasterManager().getStopManager().getAllStopsByPlanId(Integer.parseInt(planId));
+                List<Stop> matchingStops = new ArrayList<>();
+                for (Stop stop :
+                        stops) {
+                    if (stop.getStatus() != null && stop.getStatus() == approval.isApproved()){
+                        matchingStops.add(stop);
+                    }
+                }
+                System.out.println("Got List");
+                for(int i = 0; i < matchingStops.size(); i++) {
+                    if (matchingStops.get(i).getStopId() == approval.getStopId()) {
+                        approval.setPosition(i);
+                        break;
+                    }
+                }
+                message.setEventData(approval.getJson());
                 for(Session subscriber: planViewers.get(planId))
                 {
+                    System.out.println("Subscriber" );
                     subscriber
                             .getBasicRemote()
                             .sendObject(message);

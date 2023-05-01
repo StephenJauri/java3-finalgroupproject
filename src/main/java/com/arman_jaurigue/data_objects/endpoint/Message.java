@@ -4,6 +4,7 @@ import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonValue;
 
+import java.io.StringReader;
 import java.io.StringWriter;
 
 public class Message {
@@ -11,7 +12,9 @@ public class Message {
     private JsonObject eventData;
 
     public Message(JsonObject json) {
+        System.out.println("Began Creation");
         setJson(json);
+        System.out.println("Built Message");
     }
 
     public String getEventName() {
@@ -32,14 +35,16 @@ public class Message {
 
     public JsonObject getJson() {
         return Json.createObjectBuilder()
-                .add("name", eventName)
+                .add("event", eventName)
                 .add("data", eventData)
                 .build();
     }
 
     public void setJson(JsonObject json) {
         this.eventName = json.getString("event");
-        this.eventData = json.getJsonObject("data");
+        this.eventData = Json
+                .createReader(new StringReader(json.getString("data")))
+                .readObject();
     }
 
     @Override

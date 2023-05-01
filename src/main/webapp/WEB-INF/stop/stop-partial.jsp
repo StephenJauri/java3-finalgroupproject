@@ -3,6 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.arman_jaurigue.data_objects.*" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="java.util.Locale" %>
 <%
     Plan plan = (Plan) request.getAttribute("plan");
     List<Stop> model = (List<Stop>) request.getAttribute("model");
@@ -58,7 +60,7 @@
     <% } %>
     <h5>Accepted</h5>
     <hr/>
-    <div class="row">
+    <div class="row" id="approved-stops">
         <% if (acceptedStops.size() > 0) { %>
         <% for (Stop stop : acceptedStops) { %>
         <div class="stop-control">
@@ -89,10 +91,10 @@
     </div>
     <h5>Pending</h5>
     <hr/>
-    <div class="row">
+    <div class="row" id="pending-stops">
         <% if (pendingStops.size() > 0) { %>
         <% for (Stop stop : pendingStops) { %>
-            <div class="stop-control">
+            <div class="stop-control" id="stop-control-<%=stop.getStopId()%>">
                 <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId()); %>
                 <div class="stop-name">
                     Stop Name: <%= stop.getName() %>
@@ -113,10 +115,10 @@
                     Description: <%= stop.getDescription() %>
                 </div>
                 <div class="stop-accept">
-                    <button>Accept</button>
+                    <button class="approve-stop" type="submit" value="<%=stop.getStopId()%>">Accept</button>
                 </div>
                 <div class="stop-deny">
-                    <button>Deny</button>
+                    <button class="deny-stop" type="submit" value="<%=stop.getStopId()%>">Deny</button>
                 </div>
             </div>
         <% } %>
@@ -126,7 +128,7 @@
     </div>
     <h5>Denied</h5>
     <hr/>
-    <div class="row">
+    <div class="row" id="denied-stops">
         <% if (deniedStops.size() > 0) { %>
         <% for (Stop stop : deniedStops) { %>
         <div class="stop-control">

@@ -1,9 +1,9 @@
 const planId = new URLSearchParams(window.location.search).get("planId");
-const wsMessageUri = "ws://" + document.location.host + document.location.pathname + "/stopslive/" + planId;
+const wsMessageUri = "ws://" + document.location.host + document.location.pathname + "live/" + planId;
 
 // inspired from https://gist.github.com/ismasan/299789
 const MultiEventWebsocket = function(url){
-    const dispatch = function(eventName, eventData){
+    let dispatch = function(eventName, eventData){
         const chain = callbacks[eventName];
         if(typeof chain == 'undefined') return;
         for(let i = 0; i < chain.length; i++){
@@ -20,17 +20,18 @@ const MultiEventWebsocket = function(url){
     };
 
     this.send = function(eventName, eventData){
-        const message = JSON.stringify({event: eventName, data: eventData});
-        conn.send( message );
+            const message = JSON.stringify({event: eventName, data: eventData});
+            conn.send(message);
         return this;
     };
 
+    this.isOpen = function() {
+        return conn.readyState === chatWebSocket.OPEN;
+    }
+
     conn.onmessage = function(evt){
-        if (this.isOpen())
-        {
             const json = JSON.parse(evt.data);
             dispatch(json.event, json.data);
-        }
     };
     conn.onclose = function(){
         dispatch('close',null);
@@ -40,23 +41,30 @@ const MultiEventWebsocket = function(url){
     }
 
 
-    this.isOpen = function() {
-        return conn.readyState === chatWebSocket.OPEN;
-    }
 };
 const chatWebSocket = new MultiEventWebsocket(wsMessageUri);
 chatWebSocket.bind("changeStopApproval", function(data){
-   alert(JSON.stringify(data));
+    let control = $("#stop-control-"+data.stopId);
+    control.find(".stop-accept").remove();
+    control.find(".stop-deny").remove();
+    $("#pending-stops").remove("#stop-control-"+data.stopId);
+    let beforeIndex = data.insertPosition - 1;
+    control.find(".stop-status").text(data.approved ? "Accepted" : "Denied");
+    if(beforeIndex !== -1) {
+        console.log("#" + (data.approved ? "approved" : "denied") + "-stops > div:nth-child(" + (beforeIndex) + ")");
+        $("#" + (data.approved ? "approved" : "denied") + "-stops > div:nth-child(" + (beforeIndex) + ")").after()
+    } else {
+        $("#" + (data.approved ? "approved" : "denied") + "-stops").prepend(control);
+    }
 });
 
-console.log("lets go");
 
 let approves = document.getElementsByClassName("approve-stop");
 for (let i = 0; i < approves.length; i++)
 {
-    approves[i].addEventListener("submit", function(event) {
+    approves[i].addEventListener("click", function(event) {
         event.preventDefault();
-        const stopId = approves[i].getAttribute("value");
+        const stopId = +approves[i].getAttribute("value");
         const json = JSON.stringify({
             "stopId": stopId,
             "approved": true
@@ -66,11 +74,11 @@ for (let i = 0; i < approves.length; i++)
 }
 
 let denies = document.getElementsByClassName("deny-stop");
-for (let i = 0; i < approves.length; i++)
+for (let i = 0; i < denies.length; i++)
 {
-    approves[i].addEventListener("submit", function(event) {
+    denies[i].addEventListener("click", function(event) {
         event.preventDefault();
-        const stopId = approves[i].getAttribute("value");
+        const stopId = +denies[i].getAttribute("value");
         const json = JSON.stringify({
             "stopId": stopId,
             "approved": false
