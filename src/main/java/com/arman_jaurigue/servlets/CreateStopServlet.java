@@ -1,8 +1,11 @@
 package com.arman_jaurigue.servlets;
 
+import com.arman_jaurigue.data_access.websocket.MessageEndpoint;
 import com.arman_jaurigue.data_objects.Plan;
 import com.arman_jaurigue.data_objects.Stop;
 import com.arman_jaurigue.data_objects.User;
+import com.arman_jaurigue.data_objects.endpoint.Message;
+import com.arman_jaurigue.data_objects.endpoint.NewStop;
 import com.arman_jaurigue.logic_layer.MasterManager;
 import com.arman_jaurigue.models.CreatePlanModel;
 import com.arman_jaurigue.models.CreateStopModel;
@@ -10,6 +13,7 @@ import com.arman_jaurigue.models.Model;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.websocket.Session;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.format.DateTimeFormatter;
@@ -64,9 +68,6 @@ public class CreateStopServlet extends HttpServlet {
                         return;
                     }
 
-                    System.out.println(plan.getEndDate().toString());
-                    System.out.println(plan.getStartDate().toString());
-                    System.out.println(stop.getTime().toString());
                     if (stop.getTime().before(Timestamp.valueOf(plan.getStartDate())) || stop.getTime().after(Timestamp.valueOf(plan.getEndDate()))) {
                         DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM);
                         model.setTimeError("Time must be between the start and end of the plan: " + plan.getStartDate().format(formatter) + " - " + plan.getEndDate().format(formatter));
@@ -75,7 +76,17 @@ public class CreateStopServlet extends HttpServlet {
                     }
 
                     MasterManager.getMasterManager().getStopManager().addStop(user, stop);
-                    response.sendRedirect("plans");
+                    Message message = new Message();
+                    message.setEventName("newStopAdded");
+                    NewStop newStop = new NewStop();
+                    newStop.setStopId(stop.getStopId());
+                    message.setEventData(newStop.getJson());
+                    for (Session session : MessageEndpoint.getPlanViewers(stop.getPlanId())) {
+                        session
+                            .getBasicRemote()
+                            .sendObject(message);
+                    }
+                    response.sendRedirect("stops?planId="+stop.getPlanId());
                 } catch (Exception e)
                 {
                     response.sendError(500);

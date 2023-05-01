@@ -5,32 +5,31 @@ import com.arman_jaurigue.data_objects.Stop;
 import com.arman_jaurigue.data_objects.User;
 import com.arman_jaurigue.logic_layer.MasterManager;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "StopServlet", value = "/stops")
+@WebServlet(name = "StopServlet", value = "/stop")
 public class StopServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User)request.getSession().getAttribute("user");
         if (user != null)
         {
-            Integer planId = Integer.parseInt(request.getParameter("planId"));
-            if(planId != null) {
+            Integer stopId = Integer.parseInt(request.getParameter("stopId"));
+            if(stopId != null) {
                 try {
-                    Plan plan = MasterManager.getMasterManager().getPlanManager().getPlanByPlanId(planId);
-                    List<Stop> stops = MasterManager.getMasterManager().getStopManager().getAllStopsByPlanId(planId);
-                    User owner = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId());
-                    List<User> attendees = MasterManager.getMasterManager().getUserManager().getUsersByPlanId(planId);
+                    Stop stop = MasterManager.getMasterManager().getStopManager().getStopByStopId(stopId);
+                    int planOwner = MasterManager.getMasterManager().getPlanManager().getPlanByPlanId(stop.getPlanId()).getUserId();
+                    List<User> attendees = MasterManager.getMasterManager().getUserManager().getUsersByPlanId(stopId);
                     request.setAttribute("user", user);
-                    request.setAttribute("plan", plan);
-                    request.setAttribute("model", stops);
-                    request.setAttribute("owner", owner);
-                    request.setAttribute("attendees", attendees);
-                    request.getRequestDispatcher("WEB-INF/stop/stops.jsp").forward(request, response);
+                    request.setAttribute("planOwner", planOwner);
+                    request.setAttribute("stop", stop);
+                    request.getRequestDispatcher("WEB-INF/stop/stop-partial.jsp").forward(request, response);
                 } catch (Exception ex) {
                     System.out.println("ERROR:" + ex.getMessage());
 //                    response.sendError(500);
@@ -43,10 +42,5 @@ public class StopServlet extends HttpServlet {
         } else {
             response.sendRedirect("login");
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

@@ -11,6 +11,10 @@ public class Message {
     private String eventName;
     private JsonObject eventData;
 
+    public Message()
+    {
+
+    }
     public Message(JsonObject json) {
         System.out.println("Began Creation");
         setJson(json);

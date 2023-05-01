@@ -1,7 +1,6 @@
 package com.arman_jaurigue.models;
 
 import com.arman_jaurigue.data_objects.data_annotations.*;
-import jdk.jfr.Timestamp;
 
 public class CreateStopModel {
     @Required

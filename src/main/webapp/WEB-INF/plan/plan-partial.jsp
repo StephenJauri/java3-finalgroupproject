@@ -8,6 +8,12 @@
   List<Plan> model = (List<Plan>) request.getAttribute("model");
   User owner = null;
 %>
+
+
+<div class="row">
+    <a href="createplan" class="button">Add Plan</a>
+</div>
+
 <% for(Plan plan: model) { %>
   <% owner = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId()); %>
   <div class="plan-control container">

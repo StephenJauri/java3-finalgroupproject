@@ -41,6 +41,40 @@ public class StopAccessor {
         }
         return stops;
     }
+
+    public Stop selectStopByStopId(int stopId) {
+        Stop stop = null;
+        try(Connection connection = DbConnection.getConnection()) {
+            if(connection.isValid(2)) {
+                CallableStatement callableStatement = connection.prepareCall("{CALL sp_select_stop_by_stopId(?)}");
+                callableStatement.setInt(1, stopId);
+                ResultSet resultSet = callableStatement.executeQuery();
+                if(resultSet.next()) {
+                    stop = new Stop();
+                    stop.setStopId(resultSet.getInt("StopId"));
+                    stop.setPlanId(resultSet.getInt("PlanId"));
+                    stop.setUserId(resultSet.getInt("UserId"));
+                    stop.setName(resultSet.getString("Name"));
+                    stop.setLocation(resultSet.getString("Location"));
+                    stop.setTime(resultSet.getTimestamp("Time"));
+                    stop.setDescription(resultSet.getString("Description"));
+                    boolean bool = resultSet.getBoolean("Status");
+                    if(resultSet.wasNull()) {
+                        stop.setStatus(null);
+                    } else {
+                        stop.setStatus(bool);
+                    }
+                }
+                resultSet.close();
+                callableStatement.close();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return stop;
+    }
+
+
     public int InsertStop(Stop stop) {
         int stopId = 0;
         try (Connection connection = DbConnection.getConnection()) {
@@ -82,4 +116,4 @@ public class StopAccessor {
         }
         return result;
     }
-}giot
+}

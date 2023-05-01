@@ -47,42 +47,45 @@ chatWebSocket.bind("changeStopApproval", function(data){
     let control = $("#stop-control-"+data.stopId);
     control.find(".stop-accept").remove();
     control.find(".stop-deny").remove();
-    $("#pending-stops").remove("#stop-control-"+data.stopId);
-    let beforeIndex = data.insertPosition - 1;
+    control.remove();
+    let beforeIndex = data.insertPosition;
     control.find(".stop-status").text(data.approved ? "Accepted" : "Denied");
-    if(beforeIndex !== -1) {
+    if(beforeIndex !== 0) {
         console.log("#" + (data.approved ? "approved" : "denied") + "-stops > div:nth-child(" + (beforeIndex) + ")");
-        $("#" + (data.approved ? "approved" : "denied") + "-stops > div:nth-child(" + (beforeIndex) + ")").after()
+        $("#" + (data.approved ? "approved" : "denied") + "-stops > div:nth-child(" + (beforeIndex) + ")").after(control)
     } else {
-        $("#" + (data.approved ? "approved" : "denied") + "-stops").prepend(control);
+        console.log("#" + (data.approved ? "approved" : "denied") + "-stops > div:nth-child(" + (beforeIndex) + ")");
+        control.prependTo("#" + (data.approved ? "approved" : "denied") + "-stops");
     }
 });
 
-
-let approves = document.getElementsByClassName("approve-stop");
-for (let i = 0; i < approves.length; i++)
-{
-    approves[i].addEventListener("click", function(event) {
-        event.preventDefault();
-        const stopId = +approves[i].getAttribute("value");
-        const json = JSON.stringify({
-            "stopId": stopId,
-            "approved": true
-        });
-        chatWebSocket.send("changeStopApproval", json);
+chatWebSocket.bind("newStopAdded", function(data) {
+    $.get("stop?stopId=" + data.stopId, function(newData) {
+        $("#pending-stops").append(newData);
     });
-}
+});
 
-let denies = document.getElementsByClassName("deny-stop");
-for (let i = 0; i < denies.length; i++)
-{
-    denies[i].addEventListener("click", function(event) {
+
+$(document).ready(function() {
+    let denies = $(".deny-stop");
+    denies.click(function (event) {
         event.preventDefault();
-        const stopId = +denies[i].getAttribute("value");
+        const stopId = +$(this).val();
         const json = JSON.stringify({
             "stopId": stopId,
             "approved": false
         });
         chatWebSocket.send("changeStopApproval", json);
     });
-}
+
+    let approves = $(".approve-stop");
+    approves.click(function (event) {
+        event.preventDefault();
+        const stopId = +$(this).val();
+        const json = JSON.stringify({
+            "stopId": stopId,
+            "approved": true
+        });
+        chatWebSocket.send("changeStopApproval", json);
+    });
+});

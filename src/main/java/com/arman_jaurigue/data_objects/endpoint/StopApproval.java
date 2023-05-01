@@ -10,6 +10,10 @@ public class StopApproval {
     private boolean approved;
     private int position;
 
+    public StopApproval()
+    {
+
+    }
     public StopApproval(JsonObject json) {
         setJson(json);
         position = 0;

@@ -21,6 +21,17 @@ public class StopManager {
         }
         return stops;
     }
+
+    public Stop getStopByStopId(int stopId) {
+        Stop stop;
+        try {
+            stop = stopAccessor.selectStopByStopId(stopId);
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to load stops", ex);
+        }
+        return stop;
+    }
+
     public boolean addStop(User user, Stop stop) {
         boolean success = false;
 

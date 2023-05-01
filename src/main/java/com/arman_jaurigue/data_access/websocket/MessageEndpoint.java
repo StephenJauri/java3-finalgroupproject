@@ -20,6 +20,10 @@ public class MessageEndpoint {
         planViewers = Collections.synchronizedSortedMap(new TreeMap<>());
     }
 
+    public static Set<Session> getPlanViewers(int planId) {
+        return planViewers.get(Integer.toString(planId));
+    }
+
     @OnOpen
     public void onOpen(Session session, @PathParam("planId") String planId)
     {
@@ -52,8 +56,7 @@ public class MessageEndpoint {
             if (message.getEventName().equals("changeStopApproval"))
             {
                 StopApproval approval = new StopApproval(message.getEventData());
-                MasterManager.getMasterManager().getStopManager().updateStopApproval(approval.getStopId(), approval.isApproved());
-                System.out.println("got approval");
+                MasterManager.getMasterManager().getStopManager().editStopStatusByStopId(approval.getStopId(), approval.isApproved());
                 List<Stop> stops = MasterManager.getMasterManager().getStopManager().getAllStopsByPlanId(Integer.parseInt(planId));
                 List<Stop> matchingStops = new ArrayList<>();
                 for (Stop stop :
@@ -62,7 +65,6 @@ public class MessageEndpoint {
                         matchingStops.add(stop);
                     }
                 }
-                System.out.println("Got List");
                 for(int i = 0; i < matchingStops.size(); i++) {
                     if (matchingStops.get(i).getStopId() == approval.getStopId()) {
                         approval.setPosition(i);
@@ -72,7 +74,6 @@ public class MessageEndpoint {
                 message.setEventData(approval.getJson());
                 for(Session subscriber: planViewers.get(planId))
                 {
-                    System.out.println("Subscriber" );
                     subscriber
                             .getBasicRemote()
                             .sendObject(message);

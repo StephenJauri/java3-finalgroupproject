@@ -6,6 +6,6 @@
     <jsp:attribute name="title">Stops</jsp:attribute>
     <jsp:attribute name="scripts"><script src="scripts/stops/stops.js"></script></jsp:attribute>
     <jsp:body>
-        <jsp:include page="stop-partial.jsp"/>
+        <jsp:include page="stops-partial.jsp"/>
     </jsp:body>
 </t:layout>
