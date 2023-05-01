@@ -13,7 +13,7 @@ Login in with the default account:
 Explore your plans and their associated stops!
 
 ## Final Project Checklist
-- Data Source: MySQL database and Websocket
+- Data Source: MySQL database (Designed and implemented by Gwen Arman) and Websocket (Designed and implemented by Stephen Jaurigue)
 - Servlets: 9 servlets
 - JSP Inputs: 14 inputs
 - User Access: Accept and Deny button only accessible to owners or assistants of a designated plan
