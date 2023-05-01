@@ -4,7 +4,7 @@
 <t:layout>
     <jsp:attribute name="title">Home</jsp:attribute>
     <jsp:body>
-        <div class="text-center">
+        <div class="text-center my-2">
             <h2>Travel Plan Final Project</h2>
             <h7>Created by Stephen Jaurigue and Gwen Arman</h7>
         </div>

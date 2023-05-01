@@ -1,0 +1,34 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="java3-finalgroupproject:war exploded">
+    <output-path>$PROJECT_DIR$/target/java3-finalgroupproject</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>java3-finalgroupproject</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="java3-finalgroupproject" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: io.github.cdimascio:java-dotenv:5.2.2" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.4.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-text:1.10.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.12.0" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.32" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.21.9" />
+          <element id="library" level="project" name="Maven: org.glassfish:jakarta.json:2.0.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/java3-finalgroupproject/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="java3-finalgroupproject/web/Web" />
+    </root>
+  </artifact>
+</component>
