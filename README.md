@@ -2,7 +2,7 @@
 ### Created by: Stephen Jaurigue and Gwen Arman 
 
 ## Description:
-Travel plan allows you to view a list of your plans and lets an owner/assistant to those plans accept or deny stops throughout that travel plan.
+Travel plan allows you to view a list of your plans and lets an owner/assistant of those plans accept or deny stops.
 Accepting or denying stops will update the page for any other users viewing the same plan.
 
 ## Instructions:
