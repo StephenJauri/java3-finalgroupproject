@@ -65,6 +65,15 @@ chatWebSocket.bind("newStopAdded", function(data) {
     });
 });
 
+chatWebSocket.bind("viewingUsersChanged", function(data) {
+    if (data.joined && !$("#viewing-user-"+data.userId).length) {
+        $("#viewing-users").append("<p id='viewing-user-"+ data.userId +"'>"+ data.name + "</p>");
+    } else if (!data.joined){
+        $("#viewing-user-"+data.userId).remove();
+        console.log("in else");
+    }
+});
+
 
 $(document).ready(function() {
     let denies = $(".deny-stop");

@@ -48,6 +48,19 @@ public class UserManager {
         return user;
     }
 
+    public User getUserByEmail(String email) throws Exception {
+        User user = null;
+        try {
+            user = userAccessor.selectUserByEmail(email);
+            if (user == null) {
+                throw new RuntimeException("Invalid email");
+            }
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to retrieve the user", ex);
+        }
+        return user;
+    }
+
     public List<User> getUsersByPlanId(int planId) {
         List<User> users;
         try {

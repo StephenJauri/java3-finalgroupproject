@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="connections">
+    <connection type="Azure.Insights:Jetbrains.IJModule" envPrefix="AZURE_INSIGHTS">
+      <resource type="Azure.Insights">43d6ef7b9a8ab96bf787e4c40dfefbb5</resource>
+      <consumer type="Jetbrains.IJModule">java3-finalgroupproject</consumer>
+    </connection>
+  </component>
+</project>

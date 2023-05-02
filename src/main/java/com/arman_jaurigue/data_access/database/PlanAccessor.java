@@ -1,6 +1,7 @@
 package com.arman_jaurigue.data_access.database;
 
 import com.arman_jaurigue.data_objects.*;
+import com.arman_jaurigue.data_objects.enumerations.Roles;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -76,5 +77,28 @@ public class PlanAccessor {
             throw new RuntimeException(e);
         }
         return planId;
+    }
+
+    public int insertUserPlan(int userId, int planId, Roles role) {
+        int rows = 0;
+
+        try(Connection connection = DbConnection.getConnection()) {
+            if(connection.isValid(2)) {
+                CallableStatement callableStatement = connection.prepareCall("{CALL `sp_insert_userplan_by_userId_and_planId`(?,?,?)}");
+                System.out.println(planId);
+                System.out.println(userId);
+                System.out.println(role);
+                callableStatement.setInt("p_userId", userId);
+                callableStatement.setInt("p_planId", planId);
+                callableStatement.setString("p_role", role.toString());
+                rows = callableStatement.executeUpdate();
+
+                callableStatement.close();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(rows);
+        return rows;
     }
 }
