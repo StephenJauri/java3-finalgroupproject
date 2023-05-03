@@ -1,3 +1,21 @@
+.viewing-users-container {
+    border: 1px solid var(--cosmos);
+    border-radius: 5px;
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    width: 200px;
+    height: fit-content;
+    padding: 10px;
+    background-color: var(--gray);
+    text-align: center;
+}
+
+.viewing-users {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
 .stop-control {
     display: grid;
     grid-template-rows: repeat(5, 1fr);

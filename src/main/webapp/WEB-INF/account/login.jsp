@@ -25,5 +25,6 @@
             </div>
             <button class="btn" type="submit">Log In</button>
         </form>
+        <a href="register" class="btn button">Register</a>
     </jsp:body>
 </t:layout>

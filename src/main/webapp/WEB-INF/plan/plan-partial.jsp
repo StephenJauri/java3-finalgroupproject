@@ -12,7 +12,7 @@
 
 <div class="row">
     <div class="col-xs-12 my-2 mx-2">
-        <a href="createplan" class=" btn button">Add Plan</a>
+        <a href="createplan" class="btn button">Add Plan</a>
     </div>
 </div>
 

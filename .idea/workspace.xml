@@ -9,11 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="">
+    <list default="true" id="d71e2977-8dd2-42a1-b513-ec29539d5b3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/plan-partial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/plan/plan-partial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/database/PlanAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/websocket/MessageEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_access/websocket/MessageEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/enumerations/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/data_objects/enumerations/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/PlanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/logic_layer/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/StopsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arman_jaurigue/servlets/StopsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stops-partial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stop/stops-partial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/stops/stops.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/stops/stops.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/stop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/stop.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +31,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Tag Library Descriptor" />
-        <option value="Tag Library Descriptor" />
-        <option value="AnnotationType" />
-        <option value="Enum" />
-        <option value="CSS File" />
-        <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -47,62 +48,40 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2OWWtShLnJ7BSgtnpBo0QJ9faQF" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PB5aF6nO2M6EOd6Kpll9if4EH9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/School Projects/java3-finalgroupproject/src/main/java/com/arman_jaurigue/data_access/websocket&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gwen/OneDrive/Documents/Important/School Spring 2023/NewJavaFinal/java3-finalgroupproject&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\School Projects\java3-finalgroupproject\src\main\java\com\arman_jaurigue\data_access\websocket" />
-      <recent name="D:\javafinal\java3-finalgroupproject\src\main\webapp\scripts\stops" />
-      <recent name="D:\javafinal\java3-finalgroupproject\src\main\java\com\arman_jaurigue\data_access\websocket" />
-      <recent name="D:\javafinal\java3-finalgroupproject\src\main\webapp\WEB-INF\stop" />
-      <recent name="C:\Users\geeks\JavaIII\java3-finalgroupproject\src\main\webapp\java\com.armanjaurigue\dataobjects" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\School Projects\java3-finalgroupproject\src\main" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.armanjaurigue" />
-      <recent name="com.armanjaurigue.data_access" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.arman_jaurigue.servlets" />
-      <recent name="com.arman_jaurigue.data_access.websocket" />
-      <recent name="com.arman_jaurigue.data_objects" />
-      <recent name="com.armanjaurigue.models" />
-    </key>
-  </component>
   <component name="RunManager" selected="Tomcat Server.Travel Plan">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
       <option name="appServicePlanResourceGroup" />
-      <option name="appSettingsKey" value="8eebea9b-b7a8-42e7-a065-6aba49eb1d0c" />
+      <option name="appSettingsKey" value="ba9ec0e7-a404-40f6-bba9-ff73636dc644" />
       <option name="artifact" />
       <option name="autoPort" value="true" />
       <option name="debugOptions" />
@@ -131,9 +110,7 @@
       </method>
     </configuration>
     <configuration name="Travel Plan" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.79" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="java3-finalgroupproject:war exploded">
           <settings>
@@ -142,7 +119,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="b88b7bf6-5a29-4449-98c5-3978ffee5912" />
+        <option name="BASE_DIRECTORY_NAME" value="f9440877-f5d9-4841-8ff5-7a5616b2bcef" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -150,7 +127,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="10163" />
+        <option name="DEBUG_PORT" value="58000" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -220,9 +197,9 @@
       </method>
     </configuration>
     <configuration name="Azure Web App: java3-finalgroupproject:java3-finalgroupproject" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App">
-      <option name="appServicePlanName" value="sp-app-java3-finalgroupprojectb91430453" />
-      <option name="appServicePlanResourceGroupName" value="rg-app-java3-finalgroupproject-230416153523" />
-      <option name="appSettingsKey" value="3ab2eb09-aba2-42df-afce-b8a8688eb7b3" />
+      <option name="appServicePlanName" value="" />
+      <option name="appServicePlanResourceGroupName" value="" />
+      <option name="appSettingsKey" value="eff6325d-71e3-4908-9eee-212c00fb4f61" />
       <option name="appSettingsToRemove">
         <set />
       </option>
@@ -237,28 +214,28 @@
       <option name="enableApplicationLog" value="false" />
       <option name="enableDetailedErrorMessage" value="false" />
       <option name="enableFailedRequestTracing" value="false" />
-      <option name="enableWebServerLogging" value="true" />
+      <option name="enableWebServerLogging" value="false" />
       <option name="newSlotConfigurationSource" />
       <option name="newSlotName" />
       <option name="openBrowserAfterDeployment" value="true" />
       <option name="operatingSystem" value="linux" />
       <option name="packaging" value="war" />
-      <option name="pricing" value="B2" />
+      <option name="pricing" value="" />
       <option name="projectBase" value="" />
       <option name="projectType" value="" />
-      <option name="region" value="southcentralus" />
-      <option name="resourceGroup" value="rg-app-java3-finalgroupproject-230416153523" />
+      <option name="region" value="" />
+      <option name="resourceGroup" value="" />
       <option name="slotName" />
       <option name="slotPanelVisible" value="false" />
       <option name="subscriptionId" value="9b61bcd2-7e1b-41f2-a65f-44a49dcea25a" />
       <option name="targetName" value="" />
       <option name="targetPath" value="" />
-      <option name="webAppContainer" value="tomcat 10.0" />
-      <option name="webAppId" value="/subscriptions/9b61bcd2-7e1b-41f2-a65f-44a49dcea25a/resourceGroups/rg-app-java3-finalgroupproject-230416153523/providers/Microsoft.Web/sites/sharedtravelplan" />
-      <option name="webAppJavaVersion" value="17" />
-      <option name="webAppName" value="sharedtravelplan" />
+      <option name="webAppContainer" value="tomcat 8.5" />
+      <option name="webAppId" value="/subscriptions/9b61bcd2-7e1b-41f2-a65f-44a49dcea25a/resourceGroups/java-iii/providers/Microsoft.Web/sites/sjaurigue" />
+      <option name="webAppJavaVersion" value="11" />
+      <option name="webAppName" value="" />
       <option name="webServerLogQuota" value="35" />
-      <option name="webServerRetentionPeriod" value="0" />
+      <option name="webServerRetentionPeriod" />
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
           <artifact name="java3-finalgroupproject:war" />
@@ -268,7 +245,7 @@
     <configuration default="true" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App">
       <option name="appServicePlanName" value="" />
       <option name="appServicePlanResourceGroupName" value="" />
-      <option name="appSettingsKey" value="f825c5e2-ff18-4743-8b93-7fe04c153c33" />
+      <option name="appSettingsKey" value="644d80cb-4d61-453b-985e-fbc94b705c15" />
       <option name="appSettingsToRemove" />
       <option name="applicationLogLevel" value="Error" />
       <option name="artifactIdentifier" />
@@ -313,26 +290,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9bbb0d15-d350-42d1-8cdc-e25afb56c9db" name="Changes" comment="" />
-      <created>1681677033014</created>
+      <changelist id="d71e2977-8dd2-42a1-b513-ec29539d5b3c" name="Changes" comment="" />
+      <created>1682917696900</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1681677033014</updated>
-      <workItem from="1681677035220" duration="1171000" />
-      <workItem from="1681678316176" duration="10458000" />
-      <workItem from="1681703791562" duration="302000" />
-      <workItem from="1681753143858" duration="1034000" />
-      <workItem from="1681772471674" duration="1568000" />
-      <workItem from="1681774137490" duration="1354000" />
-      <workItem from="1681780208531" duration="24383000" />
-      <workItem from="1681830805216" duration="11004000" />
-      <workItem from="1681924993203" duration="15350000" />
-      <workItem from="1682289254826" duration="5715000" />
-      <workItem from="1682301638388" duration="1037000" />
-      <workItem from="1682302687300" duration="263000" />
-      <workItem from="1682357272401" duration="8456000" />
-      <workItem from="1682892288986" duration="4591000" />
-      <workItem from="1682914795218" duration="810000" />
+      <updated>1682917696900</updated>
+      <workItem from="1682917699279" duration="676000" />
+      <workItem from="1682918959182" duration="35000" />
+      <workItem from="1682919071624" duration="65000" />
+      <workItem from="1682972448524" duration="22056000" />
     </task>
     <servers />
   </component>

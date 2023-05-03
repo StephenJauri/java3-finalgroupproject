@@ -3,6 +3,7 @@ package com.arman_jaurigue.logic_layer;
 import com.arman_jaurigue.data_access.database.PlanAccessor;
 import com.arman_jaurigue.data_objects.Plan;
 import com.arman_jaurigue.data_objects.User;
+import com.arman_jaurigue.data_objects.enumerations.Roles;
 
 import java.util.List;
 
@@ -35,6 +36,18 @@ public class PlanManager {
             throw new RuntimeException("Failed to add the plan", e);
         }
 
+        return success;
+    }
+
+    public boolean addUserPlan(User user, Plan plan, Roles role) {
+        boolean success = false;
+
+        try {
+            planAccessor.insertUserPlan(user.getId(), plan.getPlanId(), role);
+            success = true;
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to add the user to the plan");
+        }
         return success;
     }
     

@@ -5,11 +5,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page import="java.util.Locale" %>
+<%@ page import="com.arman_jaurigue.data_access.websocket.MessageEndpoint" %>
 <%
     Plan plan = (Plan) request.getAttribute("plan");
     List<Stop> model = (List<Stop>) request.getAttribute("model");
     User owner = (User) request.getAttribute("owner");
     List<User> attendees = (List<User>) request.getAttribute("attendees");
+    List<User> currentlyViewingUsers = (List<User>) request.getAttribute("currentlyViewingUsers");
     final User loggedInUser = (User) request.getAttribute("user");
     boolean isAssistant = (Boolean)request.getAttribute("isAssistant");
     User proposer;
@@ -27,26 +29,41 @@
         }
     }
 %>
+<div class="viewing-users-container">
+    <h5>Currently Viewing</h5>
+    <hr/>
+    <div class="viewing-users" id="viewing-users">
+    <% for (User user : currentlyViewingUsers) { %>
+        <p id="viewing-user-<%=user.getId()%>"><%=user.getFirstName() + " " + user.getLastName()%></p>
+    <% } %>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-xs-6">
-            <h2>Plan: <%=plan.getName()%>
-            </h2>
+            <h2>Plan: <%=plan.getName()%></h2>
         </div>
         <div class="col-xs-6">
             <h2><%=DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getStartDate())%> to <%= DateTimeFormatter.ofPattern("MM/dd/yy", Locale.ENGLISH).format(plan.getEndDate())%></h2>
-            </h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 mr-4 text-end">
-            <a href="createstop?planId=<%=plan.getPlanId()%>" class="btn button">Add Stop</a>
-        </div>
-    </div>
-    <div class="row">
-        <h2><%= owner.getFirstName()%> <%= owner.getLastName()%> <b>Owner</b></h2>
+        <h2><%= owner.getFirstName()%> <%= owner.getLastName()%><b> Owner</b></h2>
     </div>
     <h3>Participants:</h3>
+        <% if(loggedInUser.getId() == plan.getUserId()) { %>
+        <h4>Invite:</h4>
+        <form method="post">
+            <input name="planId" type="hidden" value="${plan.planId}"/>
+            <input name="userEmail" type="email" value="${inviteModel.userEmail}"/>
+            <select name="role">
+                <option selected value="General">General</option>
+                <option value="Assistant">Assistant</option>
+            </select>
+            <button type="submit" class="button btn">Add</button>
+            <p>${inviteModel.userEmailError}</p>
+        </form>
+    <% } %>
         <% for (User user : attendees) { %>
             <div class="row">
                 <div class="col-xs-12">
@@ -56,6 +73,12 @@
                 </div>
             </div>
     <% } %>
+    <h4>Stops</h4>
+    <div class="row">
+        <div class="col-md-12 mr-4 text-end">
+            <a href="createstop?planId=<%=plan.getPlanId()%>" class="btn button">Add Stop</a>
+        </div>
+    </div>
     <h5>Accepted</h5>
     <hr/>
     <div class="row" id="approved-stops">
