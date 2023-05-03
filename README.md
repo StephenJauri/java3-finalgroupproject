@@ -19,5 +19,5 @@ Explore your plans and their associated stops!
 - Servlets: 9 servlets
 - JSP Inputs: 16 inputs
 - User Access: 
-  - Accept and Deny button only accessible to owners or assistants of a designated plan
+  - Accept and Deny button only accessible to owners and assistants of a designated plan
   - Only owners can invite new people to the plan
