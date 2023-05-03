@@ -4,6 +4,11 @@
 <t:layout>
     <jsp:attribute name="title">Log In</jsp:attribute>
     <jsp:body>
+        <div class="row">
+            <div class="col-xs-12 my-2 mx-2">
+                <a href="register" class="btn button">Register</a>
+            </div>
+        </div>
         <form action="login" method="post" class="basic-input-groups">
 
             <div class="basic-input-group">
