@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "StopsServlet", value = "/stops")
 public class StopsServlet extends HttpServlet {
@@ -33,7 +34,7 @@ public class StopsServlet extends HttpServlet {
                     User owner = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId());
                     List<User> attendees = MasterManager.getMasterManager().getUserManager().getUsersByPlanId(planId);
                     Set<Session> viewingSessions = MessageEndpoint.getPlanViewers(plan.getPlanId());
-                    List<User> currentlyViewingUsers = viewingSessions == null ? new ArrayList<>() : viewingSessions.stream().map(sess -> MessageEndpoint.getRelatedUser(sess)).toList();
+                    List<User> currentlyViewingUsers = viewingSessions == null ? new ArrayList<>() : viewingSessions.stream().map(sess -> MessageEndpoint.getRelatedUser(sess)).collect(Collectors.toList());
                     request.setAttribute("user", user);
                     request.setAttribute("plan", plan);
                     request.setAttribute("model", stops);

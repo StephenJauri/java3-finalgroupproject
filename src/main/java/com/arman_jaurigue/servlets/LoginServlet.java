@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/account/login.jsp").forward(request,response);
                 return;
             }
-            response.sendRedirect("index");
+            response.sendRedirect(ServletHelper.getBaseUrl(request));
         }
     }
 }

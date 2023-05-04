@@ -1,5 +1,10 @@
 const planId = new URLSearchParams(window.location.search).get("planId");
-const wsMessageUri = "ws://" + document.location.host + document.location.pathname + "live/" + planId;
+let wsMessageUri = null;
+if (location.protocol !== 'https:') {
+    wsMessageUri = "ws://" + document.location.host + document.location.pathname + "live/" + planId;
+} else {
+    wsMessageUri = "wss://" + document.location.host + document.location.pathname + "live/" + planId;
+}
 
 // inspired from https://gist.github.com/ismasan/299789
 const MultiEventWebsocket = function(url){

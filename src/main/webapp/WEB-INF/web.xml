@@ -1,25 +1,9 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-        id="Your_WebApp_ID"
-        version="2.5">
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+        version="4.0">
   <display-name>Shared Travel Plan</display-name>
-    <servlet>
-        <servlet-name>IndexServlet</servlet-name>
-        <servlet-class>com.arman_jaurigue.servlets.IndexServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>IndexServlet</servlet-name>
-        <url-pattern></url-pattern>
-        <url-pattern>/index</url-pattern>
-        <url-pattern>/home</url-pattern>
-    </servlet-mapping>
 
 
     <servlet>
@@ -61,7 +45,6 @@
         <url-pattern>/plans</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>CreateStopServlet</servlet-name>
         <servlet-class>com.arman_jaurigue.servlets.CreateStopServlet</servlet-class>
@@ -81,10 +64,10 @@
         <url-pattern>/createplan</url-pattern>
     </servlet-mapping>
 
-<!--    <error-page>-->
-<!--        <error-code>500</error-code>-->
-<!--        <location>/ServerError.html</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/ServerError.html</location>
+    </error-page>
     <error-page>
         <error-code>404</error-code>
         <location>/FileNotFound.html</location>
