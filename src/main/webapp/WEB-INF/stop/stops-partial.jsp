@@ -85,7 +85,7 @@
         <% if (acceptedStops.size() > 0) { %>
         <% for (Stop stop : acceptedStops) { %>
         <div class="stop-control">
-            <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId()); %>
+            <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(stop.getUserId()); %>
             <div class="stop-name">
                 Stop Name: <%= stop.getName() %>
             </div>
@@ -116,7 +116,7 @@
         <% if (pendingStops.size() > 0) { %>
         <% for (Stop stop : pendingStops) { %>
             <div class="stop-control" id="stop-control-<%=stop.getStopId()%>">
-                <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId()); %>
+                <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(stop.getUserId()); %>
                 <div class="stop-name">
                     Stop Name: <%= stop.getName() %>
                 </div>
@@ -155,7 +155,7 @@
         <% if (deniedStops.size() > 0) { %>
         <% for (Stop stop : deniedStops) { %>
         <div class="stop-control">
-            <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(plan.getUserId()); %>
+            <% proposer = MasterManager.getMasterManager().getUserManager().getUserById(stop.getUserId()); %>
             <div class="stop-name">
                 Stop Name: <%= stop.getName() %>
             </div>

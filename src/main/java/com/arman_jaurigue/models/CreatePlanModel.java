@@ -13,19 +13,30 @@ public class CreatePlanModel {
 
     @Required
     @DateTime
+    @Validate(errorMessage = "Start date cannot be before today")
     private String startDate;
     private String startDateError;
 
     @Required
     @DateTime
-    @Validate(errorMessage = "End date cannot be before the start date")
     private String endDate;
     private String endDateError;
 
-    private boolean endDateValidation(String endDate) {
+
+    @CheckAfter(errorField = "endDateError", errorMessage = "End date cannot be before the start date")
+    private boolean startAndEndDateValidation() {
         boolean valid = true;
-        if (startDateError == null || startDateError.length() == 0 && endDateError == null || endDateError.length() == 0) {
+        if ((startDateError == null || startDateError.length() == 0) && (endDateError == null || endDateError.length() == 0)) {
             if (LocalDateTime.parse(startDate).isAfter(LocalDateTime.parse(endDate))) {
+                valid = false;
+            }
+        }
+        return valid;
+    }
+    private boolean startDateValidation(String startDate) {
+        boolean valid = true;
+        if (startDateError == null || startDateError.length() == 0) {
+            if (LocalDateTime.parse(startDate).isBefore(LocalDateTime.now())) {
                 valid = false;
             }
         }

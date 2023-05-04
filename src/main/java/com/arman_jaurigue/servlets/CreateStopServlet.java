@@ -19,6 +19,7 @@ import java.sql.Timestamp;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.List;
+import java.util.Set;
 
 public class CreateStopServlet extends HttpServlet {
     @Override
@@ -81,10 +82,13 @@ public class CreateStopServlet extends HttpServlet {
                     NewStop newStop = new NewStop();
                     newStop.setStopId(stop.getStopId());
                     message.setEventData(newStop.getJson());
-                    for (Session session : MessageEndpoint.getPlanViewers(stop.getPlanId())) {
-                        session
-                            .getBasicRemote()
-                            .sendObject(message);
+                    Set<Session> viewers = MessageEndpoint.getPlanViewers(stop.getPlanId());
+                    if (viewers != null) {
+                        for (Session session : viewers) {
+                            session
+                                    .getBasicRemote()
+                                    .sendObject(message);
+                        }
                     }
                     response.sendRedirect("stops?planId="+stop.getPlanId());
                 } catch (Exception e)

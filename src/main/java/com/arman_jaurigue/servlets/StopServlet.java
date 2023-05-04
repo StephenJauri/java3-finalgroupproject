@@ -31,8 +31,6 @@ public class StopServlet extends HttpServlet {
                     request.setAttribute("stop", stop);
                     request.getRequestDispatcher("WEB-INF/stop/stop-partial.jsp").forward(request, response);
                 } catch (Exception ex) {
-                    System.out.println("ERROR:" + ex.getMessage());
-//                    response.sendError(500);
                     throw new ServletException(ex);
                 }
             }

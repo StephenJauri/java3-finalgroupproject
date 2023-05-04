@@ -17,7 +17,6 @@ public class NewStop {
     }
 
     public JsonObject getJson() {
-        System.out.println("Building Json");
         return Json.createObjectBuilder()
                 .add("stopId", stopId)
                 .build();

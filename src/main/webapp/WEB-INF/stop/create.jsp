@@ -30,7 +30,7 @@
                 <input type="text" name="description" value="${model.description}"/>
                 <p class="error">${model.descriptionError}</p>
             </div>
-        <button class="btn" type="submit">Create Plan</button>
+        <button class="btn" type="submit">Create Stop</button>
     </form>
     </jsp:body>
 </t:layout>

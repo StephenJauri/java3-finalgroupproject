@@ -35,7 +35,6 @@ public class ViewingUserChanged {
     }
 
     public JsonObject getJson() {
-        System.out.println("Building Json");
         return Json.createObjectBuilder()
                 .add("userId", userId)
                 .add("name", name)

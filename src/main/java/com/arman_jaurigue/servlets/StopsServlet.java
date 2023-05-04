@@ -44,8 +44,6 @@ public class StopsServlet extends HttpServlet {
                     request.setAttribute("attendees", attendees);
                     request.getRequestDispatcher("WEB-INF/stop/stops.jsp").forward(request, response);
                 } catch (Exception ex) {
-                    System.out.println("ERROR:" + ex.getMessage());
-//                    response.sendError(500);
                     throw new ServletException(ex);
                 }
             }
@@ -73,9 +71,7 @@ public class StopsServlet extends HttpServlet {
                     } else if (planUsers.stream().anyMatch(usr -> usr.getId() == planUser.getId())) {
                         model.setUserEmailError("You already invite this person");
                     } else {
-                        System.out.println("adding");
                         MasterManager.getMasterManager().getPlanManager().addUserPlan(planUser, plan, model.getRole());
-                        System.out.println("Added");
                         request.removeAttribute("inviteModel");
                     }
                 } catch (Exception e) {

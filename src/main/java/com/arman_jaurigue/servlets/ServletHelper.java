@@ -3,6 +3,7 @@ package com.arman_jaurigue.servlets;
 import javax.servlet.http.HttpServletRequest;
 
 public class ServletHelper {
+    // Stack Overflow
     public static String getBaseUrl(HttpServletRequest request) {
         String scheme = request.getScheme() + "://";
         String serverName = request.getServerName();

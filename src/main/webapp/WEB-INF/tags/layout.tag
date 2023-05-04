@@ -3,6 +3,7 @@
 <%@attribute name="title" fragment="true" %>
 <%@attribute name="styles" fragment="true" %>
 <%@attribute name="scripts" fragment="true" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title><jsp:invoke fragment="title"/></title>
@@ -32,8 +33,12 @@
                         <% } %>
                     </ul>
 
+
                     <ul class="navbar-nav ml-auto mb-0">
-                        <li class="nav-item">
+                        <% if (session.getAttribute("user") == null) { %>
+                        <a class="nav-link" href="register">Register</a>
+                        <% } %>
+                            <li class="nav-item">
                             <% if (session.getAttribute("user") != null) { %>
                             <form action="logout" method="post" class="mb-0">
                                 <button class="nav-link" >Log Out</button>

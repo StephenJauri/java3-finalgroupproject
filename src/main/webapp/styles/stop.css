@@ -9,6 +9,7 @@
     padding: 10px;
     background-color: var(--gray);
     text-align: center;
+    z-index: 999;
 }
 
 .viewing-users {

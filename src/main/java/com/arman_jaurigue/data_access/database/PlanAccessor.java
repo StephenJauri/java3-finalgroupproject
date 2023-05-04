@@ -21,7 +21,7 @@ public class PlanAccessor {
                     plan.setUserId(resultSet.getInt("UserId"));
                     plan.setName(resultSet.getString("Name"));
                     plan.setStartDate(resultSet.getDate("StartDate").toLocalDate().atTime(resultSet.getTime("StartDate").toLocalTime()));
-                    plan.setStartDate(resultSet.getDate("EndDate").toLocalDate().atTime(resultSet.getTime("EndDate").toLocalTime()));
+                    plan.setEndDate(resultSet.getDate("EndDate").toLocalDate().atTime(resultSet.getTime("EndDate").toLocalTime()));
 
                     plans.add(plan);
                 }
@@ -46,7 +46,7 @@ public class PlanAccessor {
                     plan.setUserId(resultSet.getInt("UserId"));
                     plan.setName(resultSet.getString("Name"));
                     plan.setStartDate(resultSet.getDate("StartDate").toLocalDate().atTime(resultSet.getTime("StartDate").toLocalTime()));
-                    plan.setStartDate(resultSet.getDate("EndDate").toLocalDate().atTime(resultSet.getTime("EndDate").toLocalTime()));
+                    plan.setEndDate(resultSet.getDate("EndDate").toLocalDate().atTime(resultSet.getTime("EndDate").toLocalTime()));
                 }
                 resultSet.close();
                 callableStatement.close();
@@ -85,9 +85,6 @@ public class PlanAccessor {
         try(Connection connection = DbConnection.getConnection()) {
             if(connection.isValid(2)) {
                 CallableStatement callableStatement = connection.prepareCall("{CALL `sp_insert_userplan_by_userId_and_planId`(?,?,?)}");
-                System.out.println(planId);
-                System.out.println(userId);
-                System.out.println(role);
                 callableStatement.setInt("p_userId", userId);
                 callableStatement.setInt("p_planId", planId);
                 callableStatement.setString("p_role", role.toString());
@@ -98,7 +95,6 @@ public class PlanAccessor {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(rows);
         return rows;
     }
 }

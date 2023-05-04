@@ -66,7 +66,6 @@ public class MessageEndpoint {
             for (Session sess : planViewers.get(planId)) {
                 sess.getBasicRemote().sendObject(message);
             }
-            System.out.println("New user viewing: " + user.getFirstName() + " " + user.getLastName());
         }
     }
 
@@ -104,7 +103,6 @@ public class MessageEndpoint {
                     sess.getBasicRemote().sendObject(message);
                 }
             }
-            System.out.println("User no longer viewing: " + user.getFirstName() + " " + user.getLastName());
         }
         relatedUsers.remove(session);
     }

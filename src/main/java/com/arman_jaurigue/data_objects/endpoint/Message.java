@@ -16,9 +16,7 @@ public class Message {
 
     }
     public Message(JsonObject json) {
-        System.out.println("Began Creation");
         setJson(json);
-        System.out.println("Built Message");
     }
 
     public String getEventName() {
